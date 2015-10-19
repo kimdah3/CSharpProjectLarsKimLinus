@@ -19,3 +19,6 @@ C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProj
 C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\obj\Debug\Views\WindowAddFeed.g.cs
 C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\obj\Debug\CSharpProject_MarkupCompile.lref
 C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\obj\Debug\Views\WindowAddFeed.baml
+C:\Users\Kim\Documents\GitHub\CSharpProjectPodcast\CSharpProjectLarsKimLinus\CSharpProject\bin\Debug\CSharpProject.exe.config
+C:\Users\Kim\Documents\GitHub\CSharpProjectPodcast\CSharpProjectLarsKimLinus\CSharpProject\obj\Debug\CSharpProject.exe
+C:\Users\Kim\Documents\GitHub\CSharpProjectPodcast\CSharpProjectLarsKimLinus\CSharpProject\obj\Debug\CSharpProject.pdb
