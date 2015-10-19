@@ -12,13 +12,13 @@ using Logic.Readers;
 
 namespace GUI2
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         public RssReader RssReader { get; set; }
         public List<Uri> AllUris { get; set; }
         public List<Feed> AllFeeds { get; set; }
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             RssReader = new RssReader();
@@ -28,6 +28,7 @@ namespace GUI2
                 new Uri("http://varvet.libsyn.com/rss"),
                 new Uri("http://www.filipandfredrik.com/feed/")
             };
+
             AllFeeds = new List<Feed>();
         }
     }
