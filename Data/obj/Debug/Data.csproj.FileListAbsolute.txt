@@ -3,3 +3,8 @@ C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\Data\bin\D
 C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\Data\obj\Debug\Data.dll
 C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\Data\obj\Debug\Data.pdb
+C:\GH Clones\Projekt\Data\bin\Debug\Data.dll
+C:\GH Clones\Projekt\Data\bin\Debug\Data.pdb
+C:\GH Clones\Projekt\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\GH Clones\Projekt\Data\obj\Debug\Data.dll
+C:\GH Clones\Projekt\Data\obj\Debug\Data.pdb

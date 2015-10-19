@@ -14,7 +14,7 @@
             </Grid.RowDefinitions>
             <ListBox  x:Name="ListBoxPodcastFeeds" HorizontalAlignment="Left" Height="223" Margin="10,36,0,0" VerticalAlignment="Top" Width="380" SelectionChanged="listBox_SelectionChanged" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
             <ListBox x:Name="ListBoxSelectedPodcastEpisodes" HorizontalAlignment="Left" Height="227" Margin="25,36,0,0" VerticalAlignment="Top" Width="380" Grid.RowSpan="2" Grid.Column="1"/>
-            <Label x:Name="label" Content="Podcast FeedOuts
+            <Label x:Name="label" Content="Podcast KIMKIM
                    " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
             <Label x:Name="label1" Content="Episodes" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Grid.Column="1"/>
             <ComboBox x:Name="comboBoxCategory" HorizontalAlignment="Left" Margin="234,9,0,0" VerticalAlignment="Top" Width="156" ToolTip="Category" Grid.ColumnSpan="2"/>

@@ -22,3 +22,23 @@ C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProj
 C:\Users\Kim\Documents\GitHub\CSharpProjectPodcast\CSharpProjectLarsKimLinus\CSharpProject\bin\Debug\CSharpProject.exe.config
 C:\Users\Kim\Documents\GitHub\CSharpProjectPodcast\CSharpProjectLarsKimLinus\CSharpProject\obj\Debug\CSharpProject.exe
 C:\Users\Kim\Documents\GitHub\CSharpProjectPodcast\CSharpProjectLarsKimLinus\CSharpProject\obj\Debug\CSharpProject.pdb
+C:\GH Clones\Projekt\CSharpProject\bin\Debug\CSharpProject.exe.config
+C:\GH Clones\Projekt\CSharpProject\obj\Debug\CSharpProject.exe
+C:\GH Clones\Projekt\CSharpProject\obj\Debug\CSharpProject.pdb
+C:\GH Clones\Projekt\CSharpProject\bin\Debug\CSharpProject.exe
+C:\GH Clones\Projekt\CSharpProject\bin\Debug\CSharpProject.pdb
+C:\GH Clones\Projekt\CSharpProject\bin\Debug\Logic.dll
+C:\GH Clones\Projekt\CSharpProject\bin\Debug\Logic.pdb
+C:\GH Clones\Projekt\CSharpProject\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+C:\GH Clones\Projekt\CSharpProject\obj\Debug\Views\Details.baml
+C:\GH Clones\Projekt\CSharpProject\obj\Debug\Views\Main.baml
+C:\GH Clones\Projekt\CSharpProject\obj\Debug\Views\Details.g.cs
+C:\GH Clones\Projekt\CSharpProject\obj\Debug\Views\Main.g.cs
+C:\GH Clones\Projekt\CSharpProject\obj\Debug\Views\WindowAddFeed.g.cs
+C:\GH Clones\Projekt\CSharpProject\obj\Debug\App.g.cs
+C:\GH Clones\Projekt\CSharpProject\obj\Debug\CSharpProject_MarkupCompile.cache
+C:\GH Clones\Projekt\CSharpProject\obj\Debug\CSharpProject_MarkupCompile.lref
+C:\GH Clones\Projekt\CSharpProject\obj\Debug\Views\WindowAddFeed.baml
+C:\GH Clones\Projekt\CSharpProject\obj\Debug\CSharpProject.g.resources
+C:\GH Clones\Projekt\CSharpProject\obj\Debug\CSharpProject.Properties.Resources.resources
+C:\GH Clones\Projekt\CSharpProject\obj\Debug\GUI.csproj.GenerateResource.Cache

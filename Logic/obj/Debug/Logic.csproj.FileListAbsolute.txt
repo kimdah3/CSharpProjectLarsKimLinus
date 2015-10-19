@@ -5,3 +5,10 @@ C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\Logic\bin\
 C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\Logic\obj\Debug\Logic.csprojResolveAssemblyReference.cache
 C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\Logic\obj\Debug\Logic.dll
 C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\Logic\obj\Debug\Logic.pdb
+C:\GH Clones\Projekt\Logic\bin\Debug\Logic.dll
+C:\GH Clones\Projekt\Logic\bin\Debug\Logic.pdb
+C:\GH Clones\Projekt\Logic\bin\Debug\Data.dll
+C:\GH Clones\Projekt\Logic\bin\Debug\Data.pdb
+C:\GH Clones\Projekt\Logic\obj\Debug\Logic.csprojResolveAssemblyReference.cache
+C:\GH Clones\Projekt\Logic\obj\Debug\Logic.dll
+C:\GH Clones\Projekt\Logic\obj\Debug\Logic.pdb
