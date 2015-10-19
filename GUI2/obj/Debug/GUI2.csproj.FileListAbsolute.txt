@@ -1,0 +1,10 @@
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\GUI2\bin\Debug\GUI2.exe.config
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\GUI2\bin\Debug\GUI2.exe
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\GUI2\bin\Debug\GUI2.pdb
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\GUI2\obj\Debug\GUI2.csprojResolveAssemblyReference.cache
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\GUI2\obj\Debug\GUI2.Properties.Resources.resources
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\GUI2\obj\Debug\GUI2.csproj.GenerateResource.Cache
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\GUI2\obj\Debug\GUI2.exe
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\GUI2\obj\Debug\GUI2.pdb
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\GUI2\bin\Debug\Logic.dll
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\GUI2\bin\Debug\Logic.pdb

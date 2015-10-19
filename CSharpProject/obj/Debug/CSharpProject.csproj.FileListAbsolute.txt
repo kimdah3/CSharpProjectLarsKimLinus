@@ -1,0 +1,13 @@
+C:\dev\CSharpProject\CSharpProject\bin\Debug\CSharpProject.exe.config
+C:\dev\CSharpProject\CSharpProject\bin\Debug\CSharpProject.exe
+C:\dev\CSharpProject\CSharpProject\bin\Debug\CSharpProject.pdb
+C:\dev\CSharpProject\CSharpProject\obj\Debug\CSharpProject.csprojResolveAssemblyReference.cache
+C:\dev\CSharpProject\CSharpProject\obj\Debug\MainWindow.baml
+C:\dev\CSharpProject\CSharpProject\obj\Debug\MainWindow.g.cs
+C:\dev\CSharpProject\CSharpProject\obj\Debug\App.g.cs
+C:\dev\CSharpProject\CSharpProject\obj\Debug\CSharpProject_MarkupCompile.cache
+C:\dev\CSharpProject\CSharpProject\obj\Debug\CSharpProject.g.resources
+C:\dev\CSharpProject\CSharpProject\obj\Debug\CSharpProject.Properties.Resources.resources
+C:\dev\CSharpProject\CSharpProject\obj\Debug\CSharpProject.csproj.GenerateResource.Cache
+C:\dev\CSharpProject\CSharpProject\obj\Debug\CSharpProject.exe
+C:\dev\CSharpProject\CSharpProject\obj\Debug\CSharpProject.pdb

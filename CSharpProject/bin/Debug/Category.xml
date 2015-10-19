@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCategory xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Category>
+    <Id>6b30511d-2cd1-4325-ad73-7b905f76ffc0</Id>
+    <Name>Nyheter</Name>
+  </Category>
+  <Category>
+    <Id>516401f4-b45c-46ef-b8f4-9d05021ae794</Id>
+    <Name>Pods</Name>
+  </Category>
+  <Category>
+    <Id>0c9cd216-86cf-4a62-884c-1b428150ebac</Id>
+    <Name>Pods</Name>
+  </Category>
+</ArrayOfCategory>

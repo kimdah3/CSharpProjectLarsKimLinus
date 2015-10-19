@@ -1,0 +1,21 @@
+C:\Users\Josefine\Dropbox\CSharp\CSharpProjectEmpty\CSharpProject\bin\Debug\CSharpProject.exe.config
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\bin\Debug\CSharpProject.exe.config
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\bin\Debug\CSharpProject.exe
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\bin\Debug\CSharpProject.pdb
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\bin\Debug\Logic.dll
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\bin\Debug\Logic.pdb
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\obj\Debug\Views\Details.baml
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\obj\Debug\Views\Main.baml
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\obj\Debug\Views\Details.g.cs
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\obj\Debug\Views\Main.g.cs
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\obj\Debug\App.g.cs
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\obj\Debug\CSharpProject_MarkupCompile.cache
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\obj\Debug\CSharpProject.g.resources
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\obj\Debug\CSharpProject.Properties.Resources.resources
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\obj\Debug\GUI.csproj.GenerateResource.Cache
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\obj\Debug\CSharpProject.exe
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\obj\Debug\CSharpProject.pdb
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\obj\Debug\Views\WindowAddFeed.g.cs
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\obj\Debug\CSharpProject_MarkupCompile.lref
+C:\Users\Kim\Documents\Visual Studio 2015\Projects\CSharpProjectEmpty\CSharpProject\obj\Debug\Views\WindowAddFeed.baml
