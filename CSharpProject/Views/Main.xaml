@@ -5,20 +5,21 @@
     <StackPanel>
         <Grid Height="370">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="377*"/>
-                <ColumnDefinition Width="415*"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="129*"/>
+                <ColumnDefinition Width="208*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="191*"/>
                 <RowDefinition Height="231*"/>
             </Grid.RowDefinitions>
-            <ListBox  x:Name="ListBoxPodcastFeeds" HorizontalAlignment="Left" Height="223" Margin="10,36,0,0" VerticalAlignment="Top" Width="380" SelectionChanged="listBox_SelectionChanged" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-            <ListBox x:Name="ListBoxSelectedPodcastEpisodes" HorizontalAlignment="Left" Height="227" Margin="25,36,0,0" VerticalAlignment="Top" Width="380" Grid.RowSpan="2" Grid.Column="1"/>
+            <ListBox  x:Name="ListBoxPodcastFeeds" HorizontalAlignment="Left" Height="223" Margin="10,36,0,0" VerticalAlignment="Top" Width="380" SelectionChanged="listBox_SelectionChanged" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
+            <ListBox x:Name="ListBoxSelectedPodcastEpisodes" HorizontalAlignment="Left" Height="227" Margin="24.666,36,0,0" VerticalAlignment="Top" Width="380" Grid.RowSpan="2" Grid.Column="2"/>
             <Label x:Name="label" Content="Podcast KIMKIM
-                   " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="label1" Content="Episodes" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-            <ComboBox x:Name="comboBoxCategory" HorizontalAlignment="Left" Margin="234,9,0,0" VerticalAlignment="Top" Width="156" ToolTip="Category" Grid.ColumnSpan="2"/>
-            <Button x:Name="buttonAddFeed" Content="Add Feed" HorizontalAlignment="Left" Margin="315,97,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Click="buttonAddFeed_Click"/>
+                   " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+            <Label x:Name="label1" Content="Episodes" HorizontalAlignment="Left" Margin="24.666,10,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+            <ComboBox x:Name="comboBoxCategory" HorizontalAlignment="Left" Margin="114.333,9,0,0" VerticalAlignment="Top" Width="156" ToolTip="Category" Grid.ColumnSpan="2" Grid.Column="1"/>
+            <Button x:Name="buttonAddFeed" Content="Add Feed" HorizontalAlignment="Left" Margin="195.333,96.667,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Click="buttonAddFeed_Click" Grid.Column="1"/>
         </Grid>
 
 

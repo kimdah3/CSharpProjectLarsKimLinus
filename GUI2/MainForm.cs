@@ -30,6 +30,21 @@ namespace GUI2
             };
 
             AllFeeds = new List<Feed>();
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+            foreach (var uri in AllUris)
+            {
+                AllFeeds.Add(RssReader.ReadFeed(uri));
+            }
+
+            foreach (var feed in AllFeeds)
+            {
+                listBoxPodcastFeeds.Items.Add(feed);
+            }
         }
     }
 }
