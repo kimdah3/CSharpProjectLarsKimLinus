@@ -45,5 +45,15 @@ namespace GUI2
                 listBoxPodcastFeeds.Items.Add(feed);
             }
         }
+
+        private void listBoxPodcastFeeds_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var feed = (Feed) listBoxPodcastFeeds.SelectedItem;
+            listBoxPodcastEpisodes.Items.Clear();
+            foreach (var item in feed.CollectionFeedItems)
+            {
+                listBoxPodcastEpisodes.Items.Add(item);
+            }
+        }
     }
 }

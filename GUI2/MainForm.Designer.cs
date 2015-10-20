@@ -30,8 +30,8 @@
         {
             this.labelPodcastFeeds = new System.Windows.Forms.Label();
             this.labelPodcastEpisodes = new System.Windows.Forms.Label();
-            this.listViewPodcastEpisodes = new System.Windows.Forms.ListView();
             this.listBoxPodcastFeeds = new System.Windows.Forms.ListBox();
+            this.listBoxPodcastEpisodes = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // labelPodcastFeeds
@@ -52,14 +52,6 @@
             this.labelPodcastEpisodes.TabIndex = 2;
             this.labelPodcastEpisodes.Text = "Podcast episodes";
             // 
-            // listViewPodcastEpisodes
-            // 
-            this.listViewPodcastEpisodes.Location = new System.Drawing.Point(356, 32);
-            this.listViewPodcastEpisodes.Name = "listViewPodcastEpisodes";
-            this.listViewPodcastEpisodes.Size = new System.Drawing.Size(319, 351);
-            this.listViewPodcastEpisodes.TabIndex = 3;
-            this.listViewPodcastEpisodes.UseCompatibleStateImageBehavior = false;
-            // 
             // listBoxPodcastFeeds
             // 
             this.listBoxPodcastFeeds.FormattingEnabled = true;
@@ -68,14 +60,24 @@
             this.listBoxPodcastFeeds.Name = "listBoxPodcastFeeds";
             this.listBoxPodcastFeeds.Size = new System.Drawing.Size(325, 344);
             this.listBoxPodcastFeeds.TabIndex = 4;
+            this.listBoxPodcastFeeds.SelectedIndexChanged += new System.EventHandler(this.listBoxPodcastFeeds_SelectedIndexChanged);
+            // 
+            // listBoxPodcastEpisodes
+            // 
+            this.listBoxPodcastEpisodes.FormattingEnabled = true;
+            this.listBoxPodcastEpisodes.ItemHeight = 20;
+            this.listBoxPodcastEpisodes.Location = new System.Drawing.Point(356, 32);
+            this.listBoxPodcastEpisodes.Name = "listBoxPodcastEpisodes";
+            this.listBoxPodcastEpisodes.Size = new System.Drawing.Size(319, 344);
+            this.listBoxPodcastEpisodes.TabIndex = 5;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 395);
+            this.Controls.Add(this.listBoxPodcastEpisodes);
             this.Controls.Add(this.listBoxPodcastFeeds);
-            this.Controls.Add(this.listViewPodcastEpisodes);
             this.Controls.Add(this.labelPodcastEpisodes);
             this.Controls.Add(this.labelPodcastFeeds);
             this.Name = "MainForm";
@@ -90,8 +92,8 @@
 
         private System.Windows.Forms.Label labelPodcastFeeds;
         private System.Windows.Forms.Label labelPodcastEpisodes;
-        private System.Windows.Forms.ListView listViewPodcastEpisodes;
         private System.Windows.Forms.ListBox listBoxPodcastFeeds;
+        private System.Windows.Forms.ListBox listBoxPodcastEpisodes;
     }
 }
 
