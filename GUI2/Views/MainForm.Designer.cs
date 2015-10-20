@@ -1,4 +1,4 @@
-﻿namespace GUI2
+﻿namespace GUI
 {
     partial class MainForm
     {
@@ -32,6 +32,7 @@
             this.labelPodcastEpisodes = new System.Windows.Forms.Label();
             this.listBoxPodcastFeeds = new System.Windows.Forms.ListBox();
             this.listBoxPodcastEpisodes = new System.Windows.Forms.ListBox();
+            this.buttonAddPodcastFeed = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelPodcastFeeds
@@ -56,7 +57,7 @@
             // 
             this.listBoxPodcastFeeds.FormattingEnabled = true;
             this.listBoxPodcastFeeds.ItemHeight = 20;
-            this.listBoxPodcastFeeds.Location = new System.Drawing.Point(16, 32);
+            this.listBoxPodcastFeeds.Location = new System.Drawing.Point(16, 38);
             this.listBoxPodcastFeeds.Name = "listBoxPodcastFeeds";
             this.listBoxPodcastFeeds.Size = new System.Drawing.Size(325, 344);
             this.listBoxPodcastFeeds.TabIndex = 4;
@@ -66,16 +67,27 @@
             // 
             this.listBoxPodcastEpisodes.FormattingEnabled = true;
             this.listBoxPodcastEpisodes.ItemHeight = 20;
-            this.listBoxPodcastEpisodes.Location = new System.Drawing.Point(356, 32);
+            this.listBoxPodcastEpisodes.Location = new System.Drawing.Point(356, 38);
             this.listBoxPodcastEpisodes.Name = "listBoxPodcastEpisodes";
-            this.listBoxPodcastEpisodes.Size = new System.Drawing.Size(319, 344);
+            this.listBoxPodcastEpisodes.Size = new System.Drawing.Size(452, 344);
             this.listBoxPodcastEpisodes.TabIndex = 5;
+            // 
+            // buttonAddPodcastFeed
+            // 
+            this.buttonAddPodcastFeed.Location = new System.Drawing.Point(16, 394);
+            this.buttonAddPodcastFeed.Name = "buttonAddPodcastFeed";
+            this.buttonAddPodcastFeed.Size = new System.Drawing.Size(113, 38);
+            this.buttonAddPodcastFeed.TabIndex = 6;
+            this.buttonAddPodcastFeed.Text = "Add Feed";
+            this.buttonAddPodcastFeed.UseVisualStyleBackColor = true;
+            this.buttonAddPodcastFeed.Click += new System.EventHandler(this.buttonAddPodcastFeed_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 442);
+            this.ClientSize = new System.Drawing.Size(820, 664);
+            this.Controls.Add(this.buttonAddPodcastFeed);
             this.Controls.Add(this.listBoxPodcastEpisodes);
             this.Controls.Add(this.listBoxPodcastFeeds);
             this.Controls.Add(this.labelPodcastEpisodes);
@@ -94,6 +106,7 @@
         private System.Windows.Forms.Label labelPodcastEpisodes;
         private System.Windows.Forms.ListBox listBoxPodcastFeeds;
         private System.Windows.Forms.ListBox listBoxPodcastEpisodes;
+        private System.Windows.Forms.Button buttonAddPodcastFeed;
     }
 }
 

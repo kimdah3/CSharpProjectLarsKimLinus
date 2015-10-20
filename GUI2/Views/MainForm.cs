@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GUI.Views;
 using Logic.Entities;
 using Logic.Readers;
 
-namespace GUI2
+namespace GUI
 {
     public partial class MainForm : Form
     {
@@ -22,18 +23,20 @@ namespace GUI2
         {
             InitializeComponent();
             RssReader = new RssReader();
-            AllUris = new List<Uri>
-            {
-                new Uri("http://alexosigge.libsyn.com/rss"),
-                new Uri("http://varvet.libsyn.com/rss"),
-                new Uri("http://www.filipandfredrik.com/feed/")
-            };
-
-            AllFeeds = new List<Feed>();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
+            AllUris = new List<Uri>
+            {
+                //new Uri("http://alexosigge.libsyn.com/rss"),
+                //new Uri("http://varvet.libsyn.com/rss"),
+                //new Uri("http://www.filipandfredrik.com/feed/"),
+                new Uri("http://www.radiohoudi.se/feed/podcast/")
+            };
+
+            AllFeeds = new List<Feed>();
 
             foreach (var uri in AllUris)
             {
@@ -53,6 +56,28 @@ namespace GUI2
             foreach (var item in feed.CollectionFeedItems)
             {
                 listBoxPodcastEpisodes.Items.Add(item);
+            }
+        }
+
+        private void buttonAddPodcastFeed_Click(object sender, EventArgs e)
+        {
+            using (var windowAddPodcastFeed = new WindowAddPodcastFeed())
+            {
+                windowAddPodcastFeed.ShowDialog();
+                if (windowAddPodcastFeed.DialogResult == DialogResult.OK)
+                {
+                    AllFeeds.Add(windowAddPodcastFeed.NewFeed);
+                    UpdateFeedList();
+                }
+            }
+        }
+
+        private void UpdateFeedList()
+        {
+            listBoxPodcastFeeds.Items.Clear();
+            foreach (var feed in AllFeeds)
+            {
+                listBoxPodcastFeeds.Items.Add(feed);
             }
         }
     }
