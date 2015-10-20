@@ -12,3 +12,10 @@ C:\GH Clones\Projekt\Logic\bin\Debug\Data.pdb
 C:\GH Clones\Projekt\Logic\obj\Debug\Logic.csprojResolveAssemblyReference.cache
 C:\GH Clones\Projekt\Logic\obj\Debug\Logic.dll
 C:\GH Clones\Projekt\Logic\obj\Debug\Logic.pdb
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\Logic\bin\Debug\Logic.dll
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\Logic\bin\Debug\Logic.pdb
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\Logic\bin\Debug\Data.dll
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\Logic\bin\Debug\Data.pdb
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\Logic\obj\Debug\Logic.csprojResolveAssemblyReference.cache
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\Logic\obj\Debug\Logic.dll
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\Logic\obj\Debug\Logic.pdb

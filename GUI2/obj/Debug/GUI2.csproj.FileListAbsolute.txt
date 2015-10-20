@@ -29,3 +29,14 @@ C:\Users\Kim\Documents\GitHub\CSharpProjectLarsKimLinus\GUI2\obj\Debug\GUI2.cspr
 C:\Users\Kim\Documents\GitHub\CSharpProjectLarsKimLinus\GUI2\obj\Debug\GUI2.MainForm.resources
 C:\Users\Kim\Documents\GitHub\CSharpProjectLarsKimLinus\GUI2\obj\Debug\GUI2.Properties.Resources.resources
 C:\Users\Kim\Documents\GitHub\CSharpProjectLarsKimLinus\GUI2\obj\Debug\GUI2.csproj.GenerateResource.Cache
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\GUI2\bin\Debug\GUI2.exe.config
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\GUI2\obj\Debug\GUI2.exe
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\GUI2\obj\Debug\GUI2.pdb
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\GUI2\bin\Debug\GUI2.exe
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\GUI2\bin\Debug\GUI2.pdb
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\GUI2\bin\Debug\Logic.dll
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\GUI2\bin\Debug\Logic.pdb
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\GUI2\obj\Debug\GUI2.csprojResolveAssemblyReference.cache
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\GUI2\obj\Debug\GUI2.MainForm.resources
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\GUI2\obj\Debug\GUI2.Properties.Resources.resources
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\GUI2\obj\Debug\GUI2.csproj.GenerateResource.Cache

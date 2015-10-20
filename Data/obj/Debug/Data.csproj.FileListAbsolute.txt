@@ -8,3 +8,8 @@ C:\GH Clones\Projekt\Data\bin\Debug\Data.pdb
 C:\GH Clones\Projekt\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 C:\GH Clones\Projekt\Data\obj\Debug\Data.dll
 C:\GH Clones\Projekt\Data\obj\Debug\Data.pdb
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\Data\bin\Debug\Data.dll
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\Data\bin\Debug\Data.pdb
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\Data\obj\Debug\Data.dll
+C:\Users\ivars_000\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\Data\obj\Debug\Data.pdb
