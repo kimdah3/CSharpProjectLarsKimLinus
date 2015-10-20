@@ -33,6 +33,7 @@
             this.listBoxPodcastFeeds = new System.Windows.Forms.ListBox();
             this.listBoxPodcastEpisodes = new System.Windows.Forms.ListBox();
             this.buttonAddPodcastFeed = new System.Windows.Forms.Button();
+            this.buttonPlayPodcastEpisode = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelPodcastFeeds
@@ -82,18 +83,29 @@
             this.buttonAddPodcastFeed.UseVisualStyleBackColor = true;
             this.buttonAddPodcastFeed.Click += new System.EventHandler(this.buttonAddPodcastFeed_Click);
             // 
+            // buttonPlayPodcastEpisode
+            // 
+            this.buttonPlayPodcastEpisode.Location = new System.Drawing.Point(356, 394);
+            this.buttonPlayPodcastEpisode.Name = "buttonPlayPodcastEpisode";
+            this.buttonPlayPodcastEpisode.Size = new System.Drawing.Size(103, 38);
+            this.buttonPlayPodcastEpisode.TabIndex = 7;
+            this.buttonPlayPodcastEpisode.Text = "Play";
+            this.buttonPlayPodcastEpisode.UseVisualStyleBackColor = true;
+            this.buttonPlayPodcastEpisode.Click += new System.EventHandler(this.buttonPlayPodcastEpisode_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 664);
+            this.Controls.Add(this.buttonPlayPodcastEpisode);
             this.Controls.Add(this.buttonAddPodcastFeed);
             this.Controls.Add(this.listBoxPodcastEpisodes);
             this.Controls.Add(this.listBoxPodcastFeeds);
             this.Controls.Add(this.labelPodcastEpisodes);
             this.Controls.Add(this.labelPodcastFeeds);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Pod";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -107,6 +119,7 @@
         private System.Windows.Forms.ListBox listBoxPodcastFeeds;
         private System.Windows.Forms.ListBox listBoxPodcastEpisodes;
         private System.Windows.Forms.Button buttonAddPodcastFeed;
+        private System.Windows.Forms.Button buttonPlayPodcastEpisode;
     }
 }
 

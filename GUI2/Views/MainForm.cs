@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 using GUI.Views;
 using Logic.Entities;
@@ -30,7 +26,7 @@ namespace GUI
 
             AllUris = new List<Uri>
             {
-                //new Uri("http://alexosigge.libsyn.com/rss"),
+                new Uri("http://alexosigge.libsyn.com/rss"),
                 //new Uri("http://varvet.libsyn.com/rss"),
                 //new Uri("http://www.filipandfredrik.com/feed/"),
                 new Uri("http://www.radiohoudi.se/feed/podcast/")
@@ -79,6 +75,27 @@ namespace GUI
             {
                 listBoxPodcastFeeds.Items.Add(feed);
             }
+        }
+
+        private void buttonPlayPodcastEpisode_Click(object sender, EventArgs e)
+        {
+            var feedItem = (FeedItem) listBoxPodcastEpisodes.SelectedItem;
+            Process.Start(feedItem.Mp3Url.AbsoluteUri);
+            
+            /*
+            Task.run?
+            try
+            {
+                using (var f = File.Open(feedItem.Mp3Url.AbsoluteUri, FileMode.Open))
+                {
+                    //Process.Start(feedItem.Mp3Url.AbsoluteUri);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                
+            }*/
         }
     }
 }
