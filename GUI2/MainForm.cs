@@ -30,7 +30,6 @@ namespace GUI2
             };
 
             AllFeeds = new List<Feed>();
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
