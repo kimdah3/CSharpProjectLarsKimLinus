@@ -14,7 +14,6 @@ namespace GUI
         public RssReader RssReader { get; set; }
         public List<Uri> AllUris { get; set; }
         public List<Feed> AllFeeds { get; set; }
-        public string pelle;
 
         public MainForm()
         {
