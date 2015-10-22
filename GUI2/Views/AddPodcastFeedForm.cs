@@ -5,11 +5,11 @@ using Logic.Readers;
 
 namespace GUI.Views
 {
-    public partial class WindowAddPodcastFeed : Form
+    public partial class AddPodcastFeedForm : Form
     {
         public Feed NewFeed { get; set; }
 
-        public WindowAddPodcastFeed()
+        public AddPodcastFeedForm()
         {
             InitializeComponent();
         }

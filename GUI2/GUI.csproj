@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\CategorySettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CategorySettingsForm.Designer.cs">
+      <DependentUpon>CategorySettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,12 +60,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\WindowAddPodcastFeed.cs">
+    <Compile Include="Views\AddPodcastFeedForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\WindowAddPodcastFeed.Designer.cs">
-      <DependentUpon>WindowAddPodcastFeed.cs</DependentUpon>
+    <Compile Include="Views\AddPodcastFeedForm.Designer.cs">
+      <DependentUpon>AddPodcastFeedForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\CategorySettingsForm.resx">
+      <DependentUpon>CategorySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -71,9 +80,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\WindowAddPodcastFeed.resx">
-      <DependentUpon>WindowAddPodcastFeed.cs</DependentUpon>
+    <EmbeddedResource Include="Views\AddPodcastFeedForm.resx">
+      <DependentUpon>AddPodcastFeedForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -112,6 +122,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settingsimg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

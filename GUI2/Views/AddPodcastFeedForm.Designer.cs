@@ -1,6 +1,6 @@
 ﻿namespace GUI.Views
 {
-    partial class WindowAddPodcastFeed
+    partial class AddPodcastFeedForm
     {
         /// <summary>
         /// Required designer variable.
@@ -108,7 +108,7 @@
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // WindowAddPodcastFeed
+            // AddPodcastFeedForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,8 +121,8 @@
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.textBoxURL);
             this.Controls.Add(this.labelURL);
-            this.Name = "WindowAddPodcastFeed";
-            this.Text = "WindowAddPodcastFeed";
+            this.Name = "AddPodcastFeedForm";
+            this.Text = "AddPodcastFeedForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 

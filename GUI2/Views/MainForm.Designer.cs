@@ -35,6 +35,7 @@
             this.buttonAddPodcastFeed = new System.Windows.Forms.Button();
             this.buttonPlayPodcastEpisode = new System.Windows.Forms.Button();
             this.comboBoxFeedCategory = new System.Windows.Forms.ComboBox();
+            this.buttonCategorySettings = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelPodcastFeeds
@@ -102,11 +103,22 @@
             this.comboBoxFeedCategory.Size = new System.Drawing.Size(243, 28);
             this.comboBoxFeedCategory.TabIndex = 8;
             // 
+            // buttonCategorySettings
+            // 
+            this.buttonCategorySettings.Location = new System.Drawing.Point(314, 54);
+            this.buttonCategorySettings.Name = "buttonCategorySettings";
+            this.buttonCategorySettings.Size = new System.Drawing.Size(161, 32);
+            this.buttonCategorySettings.TabIndex = 9;
+            this.buttonCategorySettings.Text = "Category Settings";
+            this.buttonCategorySettings.UseVisualStyleBackColor = true;
+            this.buttonCategorySettings.Click += new System.EventHandler(this.buttonAddCategory_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(990, 664);
+            this.Controls.Add(this.buttonCategorySettings);
             this.Controls.Add(this.comboBoxFeedCategory);
             this.Controls.Add(this.buttonPlayPodcastEpisode);
             this.Controls.Add(this.buttonAddPodcastFeed);
@@ -131,6 +143,7 @@
         private System.Windows.Forms.Button buttonAddPodcastFeed;
         private System.Windows.Forms.Button buttonPlayPodcastEpisode;
         private System.Windows.Forms.ComboBox comboBoxFeedCategory;
+        private System.Windows.Forms.Button buttonCategorySettings;
     }
 }
 

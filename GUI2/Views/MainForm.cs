@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using GUI.Views;
+using GUI2.Views;
 using Logic.Entities;
 using Logic.Readers;
 
@@ -14,6 +15,7 @@ namespace GUI
         public RssReader RssReader { get; set; }
         public List<Uri> AllUris { get; set; }
         public List<Feed> AllFeeds { get; set; }
+        public HashSet<Category> Categories { get; set; }
 
         public MainForm()
         {
@@ -23,6 +25,9 @@ namespace GUI
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
+            AllFeeds = new List<Feed>();
+            Categories = new HashSet<Category> { new Category("Unspecified")};
 
             AllUris = new List<Uri>
             {
@@ -34,7 +39,6 @@ namespace GUI
                 new Uri("http://www.radiohoudi.se/feed/podcast/")
             };
 
-            AllFeeds = new List<Feed>();
 
             foreach (var uri in AllUris)
             {
@@ -61,12 +65,12 @@ namespace GUI
 
         private void buttonAddPodcastFeed_Click(object sender, EventArgs e)
         {
-            using (var windowAddPodcastFeed = new WindowAddPodcastFeed())
+            using (var addPodcastFeedForm = new AddPodcastFeedForm())
             {
-                windowAddPodcastFeed.ShowDialog();
-                if (windowAddPodcastFeed.DialogResult == DialogResult.OK)
+                addPodcastFeedForm.ShowDialog();
+                if (addPodcastFeedForm.DialogResult == DialogResult.OK)
                 {
-                    AllFeeds.Add(windowAddPodcastFeed.NewFeed);
+                    AllFeeds.Add(addPodcastFeedForm.NewFeed);
                     UpdateFeedList();
                 }
             }
@@ -101,6 +105,20 @@ namespace GUI
             var feedItem = (FeedItem)listBoxPodcastEpisodes.SelectedItem;
             Process.Start(feedItem.Mp3Url.AbsoluteUri);
 
+        }
+
+        private void buttonAddCategory_Click(object sender, EventArgs e)
+        {
+            using (var categorySettingsForm = new CategorySettingsForm())
+            {
+                categorySettingsForm.ShowDialog();
+
+                if (categorySettingsForm.DialogResult == DialogResult.OK)
+                {
+                    MessageBox.Show("OK");
+                }
+
+            }
         }
     }
 }
