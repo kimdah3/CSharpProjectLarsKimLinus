@@ -33,9 +33,9 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.labelTitleShow = new System.Windows.Forms.Label();
             this.labelAddCategory = new System.Windows.Forms.Label();
-            this.textBoxCategory = new System.Windows.Forms.TextBox();
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.comboBoxCategories = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // labelURL
@@ -81,16 +81,9 @@
             this.labelAddCategory.TabIndex = 5;
             this.labelAddCategory.Text = "Category:";
             // 
-            // textBoxCategory
-            // 
-            this.textBoxCategory.Location = new System.Drawing.Point(12, 188);
-            this.textBoxCategory.Name = "textBoxCategory";
-            this.textBoxCategory.Size = new System.Drawing.Size(546, 26);
-            this.textBoxCategory.TabIndex = 6;
-            // 
             // buttonClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(463, 224);
+            this.buttonClose.Location = new System.Drawing.Point(463, 240);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(95, 32);
             this.buttonClose.TabIndex = 7;
@@ -100,7 +93,7 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(356, 224);
+            this.buttonAdd.Location = new System.Drawing.Point(356, 240);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(101, 32);
             this.buttonAdd.TabIndex = 8;
@@ -108,14 +101,22 @@
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
+            // comboBoxCategories
+            // 
+            this.comboBoxCategories.FormattingEnabled = true;
+            this.comboBoxCategories.Location = new System.Drawing.Point(12, 189);
+            this.comboBoxCategories.Name = "comboBoxCategories";
+            this.comboBoxCategories.Size = new System.Drawing.Size(546, 28);
+            this.comboBoxCategories.TabIndex = 9;
+            // 
             // AddPodcastFeedForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 272);
+            this.ClientSize = new System.Drawing.Size(570, 293);
+            this.Controls.Add(this.comboBoxCategories);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.buttonClose);
-            this.Controls.Add(this.textBoxCategory);
             this.Controls.Add(this.labelAddCategory);
             this.Controls.Add(this.labelTitleShow);
             this.Controls.Add(this.labelTitle);
@@ -123,6 +124,7 @@
             this.Controls.Add(this.labelURL);
             this.Name = "AddPodcastFeedForm";
             this.Text = "AddPodcastFeedForm";
+            this.Load += new System.EventHandler(this.AddPodcastFeedForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,8 +137,8 @@
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Label labelTitleShow;
         private System.Windows.Forms.Label labelAddCategory;
-        private System.Windows.Forms.TextBox textBoxCategory;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.ComboBox comboBoxCategories;
     }
 }

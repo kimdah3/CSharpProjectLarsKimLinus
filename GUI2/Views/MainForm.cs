@@ -32,8 +32,6 @@ namespace GUI
             AllUris = new List<Uri>
             {
                 new Uri("http://alexosigge.libsyn.com/rss"),
-                new Uri("http://alexosigge.libsyn.com/rss"),
-                new Uri("http://alexosigge.libsyn.com/rss"),
                 //new Uri("http://varvet.libsyn.com/rss"),
                 //new Uri("http://www.filipandfredrik.com/feed/"),
                 new Uri("http://www.radiohoudi.se/feed/podcast/")
@@ -65,7 +63,7 @@ namespace GUI
 
         private void buttonAddPodcastFeed_Click(object sender, EventArgs e)
         {
-            using (var addPodcastFeedForm = new AddPodcastFeedForm())
+            using (var addPodcastFeedForm = new AddPodcastFeedForm(Categories))
             {
                 addPodcastFeedForm.ShowDialog();
                 if (addPodcastFeedForm.DialogResult == DialogResult.OK)
@@ -78,15 +76,14 @@ namespace GUI
 
         private void UpdateCategoryComboBox()
         {
-            HashSet<string> categories = new HashSet<string>();
             comboBoxFeedCategory.Items.Clear();
 
-            foreach (var feed in AllFeeds)
+            /*foreach (var feed in AllFeeds)
             {
                 categories.Add(feed.Category.Name);
-            }
+            }*/
 
-            foreach(var category in categories)
+            foreach(var category in Categories)
                 comboBoxFeedCategory.Items.Add(category);
 
         }
@@ -109,7 +106,7 @@ namespace GUI
 
         private void buttonAddCategory_Click(object sender, EventArgs e)
         {
-            using (var categorySettingsForm = new CategorySettingsForm())
+            using (var categorySettingsForm = new CategorySettingsForm(Categories))
             {
                 categorySettingsForm.ShowDialog();
 

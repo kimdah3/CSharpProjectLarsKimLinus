@@ -1,4 +1,8 @@
-﻿namespace GUI2.Views
+﻿using System;
+using System.Collections.Generic;
+using Logic.Entities;
+
+namespace GUI2.Views
 {
     partial class CategorySettingsForm
     {
@@ -32,11 +36,11 @@
             this.listBoxCategories = new System.Windows.Forms.ListBox();
             this.labelCurrentCategorie = new System.Windows.Forms.Label();
             this.labelCategoryName = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxCategoryName = new System.Windows.Forms.TextBox();
             this.buttonAddCategory = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonEditCategory = new System.Windows.Forms.Button();
+            this.buttonDeleteCategory = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelAddCategory
@@ -75,12 +79,12 @@
             this.labelCategoryName.TabIndex = 3;
             this.labelCategoryName.Text = "Name:";
             // 
-            // textBox1
+            // textBoxCategoryName
             // 
-            this.textBox1.Location = new System.Drawing.Point(19, 74);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(276, 26);
-            this.textBox1.TabIndex = 4;
+            this.textBoxCategoryName.Location = new System.Drawing.Point(19, 74);
+            this.textBoxCategoryName.Name = "textBoxCategoryName";
+            this.textBoxCategoryName.Size = new System.Drawing.Size(276, 26);
+            this.textBoxCategoryName.TabIndex = 4;
             // 
             // buttonAddCategory
             // 
@@ -91,53 +95,59 @@
             this.buttonAddCategory.Text = "Add Category";
             this.buttonAddCategory.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // buttonEditCategory
             // 
-            this.button1.Location = new System.Drawing.Point(448, 364);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 40);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Edit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonEditCategory.Location = new System.Drawing.Point(448, 364);
+            this.buttonEditCategory.Name = "buttonEditCategory";
+            this.buttonEditCategory.Size = new System.Drawing.Size(117, 40);
+            this.buttonEditCategory.TabIndex = 6;
+            this.buttonEditCategory.Text = "Edit";
+            this.buttonEditCategory.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonDeleteCategory
             // 
-            this.button2.Location = new System.Drawing.Point(585, 364);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 40);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonDeleteCategory.Location = new System.Drawing.Point(585, 364);
+            this.buttonDeleteCategory.Name = "buttonDeleteCategory";
+            this.buttonDeleteCategory.Size = new System.Drawing.Size(133, 40);
+            this.buttonDeleteCategory.TabIndex = 7;
+            this.buttonDeleteCategory.Text = "Delete";
+            this.buttonDeleteCategory.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonClose
             // 
-            this.button3.Location = new System.Drawing.Point(585, 429);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(133, 37);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Close";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonClose.Location = new System.Drawing.Point(585, 429);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(133, 37);
+            this.buttonClose.TabIndex = 8;
+            this.buttonClose.Text = "Close";
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // CategorySettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 478);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonClose);
+            this.Controls.Add(this.buttonDeleteCategory);
+            this.Controls.Add(this.buttonEditCategory);
             this.Controls.Add(this.buttonAddCategory);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxCategoryName);
             this.Controls.Add(this.labelCategoryName);
             this.Controls.Add(this.labelCurrentCategorie);
             this.Controls.Add(this.listBoxCategories);
             this.Controls.Add(this.labelAddCategory);
             this.Name = "CategorySettingsForm";
             this.Text = "CategorySettingsForm";
+            this.Load += new System.EventHandler(this.CategorySettingsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        internal void ShowDialog(HashSet<Category> categories)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -146,10 +156,10 @@
         private System.Windows.Forms.ListBox listBoxCategories;
         private System.Windows.Forms.Label labelCurrentCategorie;
         private System.Windows.Forms.Label labelCategoryName;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxCategoryName;
         private System.Windows.Forms.Button buttonAddCategory;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonEditCategory;
+        private System.Windows.Forms.Button buttonDeleteCategory;
+        private System.Windows.Forms.Button buttonClose;
     }
 }

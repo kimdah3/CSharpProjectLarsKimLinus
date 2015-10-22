@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.ServiceModel.Syndication;
 using System.Xml;
 using System.Xml.Linq;

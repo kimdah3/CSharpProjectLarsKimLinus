@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Logic.Entities;
 using Logic.Readers;
@@ -8,10 +9,17 @@ namespace GUI.Views
     public partial class AddPodcastFeedForm : Form
     {
         public Feed NewFeed { get; set; }
+        private HashSet<Category> _categories; 
 
         public AddPodcastFeedForm()
         {
             InitializeComponent();
+        }
+
+        public AddPodcastFeedForm(HashSet<Category> categories)
+        {
+            InitializeComponent();
+            _categories = categories;
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -25,7 +33,7 @@ namespace GUI.Views
             if (NewFeed != null)
             {
                 this.DialogResult = DialogResult.OK;
-                NewFeed.Category = new Category(textBoxCategory.Text);
+                NewFeed.Category = new Category("asdsad");
             }
             else
             {
@@ -54,7 +62,12 @@ namespace GUI.Views
             }
         }
 
-
-
+        private void AddPodcastFeedForm_Load(object sender, EventArgs e)
+        {
+            foreach (var category in _categories)
+            {
+                comboBoxCategories.Items.Add(category);
+            }
+        }
     }
 }
