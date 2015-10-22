@@ -34,12 +34,13 @@
             this.listBoxPodcastEpisodes = new System.Windows.Forms.ListBox();
             this.buttonAddPodcastFeed = new System.Windows.Forms.Button();
             this.buttonPlayPodcastEpisode = new System.Windows.Forms.Button();
+            this.comboBoxFeedCategory = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // labelPodcastFeeds
             // 
             this.labelPodcastFeeds.AutoSize = true;
-            this.labelPodcastFeeds.Location = new System.Drawing.Point(12, 9);
+            this.labelPodcastFeeds.Location = new System.Drawing.Point(12, 23);
             this.labelPodcastFeeds.Name = "labelPodcastFeeds";
             this.labelPodcastFeeds.Size = new System.Drawing.Size(111, 20);
             this.labelPodcastFeeds.TabIndex = 0;
@@ -48,7 +49,7 @@
             // labelPodcastEpisodes
             // 
             this.labelPodcastEpisodes.AutoSize = true;
-            this.labelPodcastEpisodes.Location = new System.Drawing.Point(352, 9);
+            this.labelPodcastEpisodes.Location = new System.Drawing.Point(522, 23);
             this.labelPodcastEpisodes.Name = "labelPodcastEpisodes";
             this.labelPodcastEpisodes.Size = new System.Drawing.Size(135, 20);
             this.labelPodcastEpisodes.TabIndex = 2;
@@ -58,9 +59,9 @@
             // 
             this.listBoxPodcastFeeds.FormattingEnabled = true;
             this.listBoxPodcastFeeds.ItemHeight = 20;
-            this.listBoxPodcastFeeds.Location = new System.Drawing.Point(16, 38);
+            this.listBoxPodcastFeeds.Location = new System.Drawing.Point(16, 97);
             this.listBoxPodcastFeeds.Name = "listBoxPodcastFeeds";
-            this.listBoxPodcastFeeds.Size = new System.Drawing.Size(325, 344);
+            this.listBoxPodcastFeeds.Size = new System.Drawing.Size(459, 344);
             this.listBoxPodcastFeeds.TabIndex = 4;
             this.listBoxPodcastFeeds.SelectedIndexChanged += new System.EventHandler(this.listBoxPodcastFeeds_SelectedIndexChanged);
             // 
@@ -68,14 +69,14 @@
             // 
             this.listBoxPodcastEpisodes.FormattingEnabled = true;
             this.listBoxPodcastEpisodes.ItemHeight = 20;
-            this.listBoxPodcastEpisodes.Location = new System.Drawing.Point(356, 38);
+            this.listBoxPodcastEpisodes.Location = new System.Drawing.Point(526, 54);
             this.listBoxPodcastEpisodes.Name = "listBoxPodcastEpisodes";
-            this.listBoxPodcastEpisodes.Size = new System.Drawing.Size(452, 344);
+            this.listBoxPodcastEpisodes.Size = new System.Drawing.Size(452, 384);
             this.listBoxPodcastEpisodes.TabIndex = 5;
             // 
             // buttonAddPodcastFeed
             // 
-            this.buttonAddPodcastFeed.Location = new System.Drawing.Point(16, 394);
+            this.buttonAddPodcastFeed.Location = new System.Drawing.Point(16, 453);
             this.buttonAddPodcastFeed.Name = "buttonAddPodcastFeed";
             this.buttonAddPodcastFeed.Size = new System.Drawing.Size(113, 38);
             this.buttonAddPodcastFeed.TabIndex = 6;
@@ -85,7 +86,7 @@
             // 
             // buttonPlayPodcastEpisode
             // 
-            this.buttonPlayPodcastEpisode.Location = new System.Drawing.Point(356, 394);
+            this.buttonPlayPodcastEpisode.Location = new System.Drawing.Point(526, 453);
             this.buttonPlayPodcastEpisode.Name = "buttonPlayPodcastEpisode";
             this.buttonPlayPodcastEpisode.Size = new System.Drawing.Size(103, 38);
             this.buttonPlayPodcastEpisode.TabIndex = 7;
@@ -93,11 +94,20 @@
             this.buttonPlayPodcastEpisode.UseVisualStyleBackColor = true;
             this.buttonPlayPodcastEpisode.Click += new System.EventHandler(this.buttonPlayPodcastEpisode_Click);
             // 
+            // comboBoxFeedCategory
+            // 
+            this.comboBoxFeedCategory.FormattingEnabled = true;
+            this.comboBoxFeedCategory.Location = new System.Drawing.Point(16, 54);
+            this.comboBoxFeedCategory.Name = "comboBoxFeedCategory";
+            this.comboBoxFeedCategory.Size = new System.Drawing.Size(243, 28);
+            this.comboBoxFeedCategory.TabIndex = 8;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 664);
+            this.ClientSize = new System.Drawing.Size(990, 664);
+            this.Controls.Add(this.comboBoxFeedCategory);
             this.Controls.Add(this.buttonPlayPodcastEpisode);
             this.Controls.Add(this.buttonAddPodcastFeed);
             this.Controls.Add(this.listBoxPodcastEpisodes);
@@ -120,6 +130,7 @@
         private System.Windows.Forms.ListBox listBoxPodcastEpisodes;
         private System.Windows.Forms.Button buttonAddPodcastFeed;
         private System.Windows.Forms.Button buttonPlayPodcastEpisode;
+        private System.Windows.Forms.ComboBox comboBoxFeedCategory;
     }
 }
 

@@ -27,6 +27,8 @@ namespace GUI
             AllUris = new List<Uri>
             {
                 new Uri("http://alexosigge.libsyn.com/rss"),
+                new Uri("http://alexosigge.libsyn.com/rss"),
+                new Uri("http://alexosigge.libsyn.com/rss"),
                 //new Uri("http://varvet.libsyn.com/rss"),
                 //new Uri("http://www.filipandfredrik.com/feed/"),
                 new Uri("http://www.radiohoudi.se/feed/podcast/")
@@ -43,11 +45,13 @@ namespace GUI
             {
                 listBoxPodcastFeeds.Items.Add(feed);
             }
+
+            UpdateCategoryComboBox();
         }
 
         private void listBoxPodcastFeeds_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var feed = (Feed) listBoxPodcastFeeds.SelectedItem;
+            var feed = (Feed)listBoxPodcastFeeds.SelectedItem;
             listBoxPodcastEpisodes.Items.Clear();
             foreach (var item in feed.CollectionFeedItems)
             {
@@ -68,6 +72,21 @@ namespace GUI
             }
         }
 
+        private void UpdateCategoryComboBox()
+        {
+            HashSet<string> categories = new HashSet<string>();
+            comboBoxFeedCategory.Items.Clear();
+
+            foreach (var feed in AllFeeds)
+            {
+                categories.Add(feed.Category.Name);
+            }
+
+            foreach(var category in categories)
+                comboBoxFeedCategory.Items.Add(category);
+
+        }
+
         private void UpdateFeedList()
         {
             listBoxPodcastFeeds.Items.Clear();
@@ -79,23 +98,9 @@ namespace GUI
 
         private void buttonPlayPodcastEpisode_Click(object sender, EventArgs e)
         {
-            var feedItem = (FeedItem) listBoxPodcastEpisodes.SelectedItem;
+            var feedItem = (FeedItem)listBoxPodcastEpisodes.SelectedItem;
             Process.Start(feedItem.Mp3Url.AbsoluteUri);
-            
-            /*
-            Task.run?
-            try
-            {
-                using (var f = File.Open(feedItem.Mp3Url.AbsoluteUri, FileMode.Open))
-                {
-                    //Process.Start(feedItem.Mp3Url.AbsoluteUri);
 
-                }
-            }
-            catch (Exception ex)
-            {
-                
-            }*/
         }
     }
 }

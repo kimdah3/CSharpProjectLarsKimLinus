@@ -77,9 +77,9 @@
             this.labelAddCategory.AutoSize = true;
             this.labelAddCategory.Location = new System.Drawing.Point(11, 161);
             this.labelAddCategory.Name = "labelAddCategory";
-            this.labelAddCategory.Size = new System.Drawing.Size(110, 20);
+            this.labelAddCategory.Size = new System.Drawing.Size(77, 20);
             this.labelAddCategory.TabIndex = 5;
-            this.labelAddCategory.Text = "Add Category:";
+            this.labelAddCategory.Text = "Category:";
             // 
             // textBoxCategory
             // 

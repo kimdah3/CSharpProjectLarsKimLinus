@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.ServiceModel.Syndication;
 using System.Xml;
+using System.Xml.Linq;
 using Logic.Entities;
 
 namespace Logic.Readers
@@ -40,6 +42,7 @@ namespace Logic.Readers
         {
             Feed feed = null;
             var feedItems = new List<FeedItem>();
+            Category category = null;
 
             SyndicationFeed syndicationFeed;
             using (var xmlReader = XmlReader.Create(uri.AbsoluteUri))
@@ -57,12 +60,24 @@ namespace Logic.Readers
                 feedItem.Id = Guid.TryParse(item.Id, out id) ? id : new Guid();
 
                 feedItem.Title = item.Title.Text;
-                feedItem.Mp3Url = item.Links[0].Uri;
+                feedItem.Mp3Url = item.Links[1].Uri;
                 feedItem.PublishDate = item.PublishDate.DateTime;
                 feedItems.Add(feedItem);
             }
 
-            feed = new Feed(Guid.NewGuid(), syndicationFeed.Title.Text, feedItems, uri);
+            // Hämtar category som finns innästlat i ett attribut.
+            foreach (var elementExtension in syndicationFeed.ElementExtensions)
+            {
+                if (elementExtension.OuterName.Equals("category"))
+                {
+                    category = new Category(elementExtension.GetObject<XElement>().FirstAttribute.Value);
+                }
+
+            }
+
+            //var categories = syndicationFeed.ElementExtensions.
+
+            feed = new Feed(Guid.NewGuid(), syndicationFeed.Title.Text, feedItems, uri, category);
 
             return feed;
         }

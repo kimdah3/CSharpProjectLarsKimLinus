@@ -11,12 +11,13 @@ namespace Logic.Entities
         public Uri Url { get; set; }
         public Category Category { get; set; }
 
-        public Feed(Guid id, string title, List<FeedItem> collectionFeedItems, Uri url)
+        public Feed(Guid id, string title, List<FeedItem> collectionFeedItems, Uri url, Category category)
         {
             Id = id;
             Title = title;
             CollectionFeedItems = collectionFeedItems;
             Url = url;
+            Category = category;
         }
 
 

@@ -11,7 +11,11 @@ namespace Logic.Entities
         {
             this.Id = Guid.NewGuid();
             this.Name = name;
-            
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }

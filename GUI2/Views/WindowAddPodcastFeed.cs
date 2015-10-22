@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logic.Entities;
 using Logic.Readers;
@@ -33,8 +32,6 @@ namespace GUI.Views
                 this.DialogResult = DialogResult.Abort;
                 MessageBox.Show("No new podcast added.");
             }
-
-
         }
 
         private void textBoxURL_Leave(object sender, EventArgs e)
