@@ -36,21 +36,36 @@ namespace Logic.Readers
             return feedItems;
         }
 
-
         public Feed ReadFeed(Uri uri)
         {
             Feed feed = null;
+            var feedItems = new List<FeedItem>();
 
             SyndicationFeed syndicationFeed;
-            using (XmlReader xmlReader = XmlReader.Create(uri.AbsoluteUri))
+            using (var xmlReader = XmlReader.Create(uri.AbsoluteUri))
             {
                 syndicationFeed = SyndicationFeed.Load(xmlReader);
                 xmlReader.Close();
             }
 
-            feed = new Feed(Guid.NewGuid(), syndicationFeed.Title.Text, (List<FeedItem>) ReadFeedItems(uri), uri);
+            if (syndicationFeed == null) return null;
+            foreach (var item in syndicationFeed.Items)
+            {
+                FeedItem feedItem = new FeedItem();
+                Guid id;
+
+                feedItem.Id = Guid.TryParse(item.Id, out id) ? id : new Guid();
+
+                feedItem.Title = item.Title.Text;
+                feedItem.Mp3Url = item.Links[0].Uri;
+                feedItem.PublishDate = item.PublishDate.DateTime;
+                feedItems.Add(feedItem);
+            }
+
+            feed = new Feed(Guid.NewGuid(), syndicationFeed.Title.Text, feedItems, uri);
 
             return feed;
         }
+
     }
 }
