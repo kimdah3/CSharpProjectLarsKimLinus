@@ -55,14 +55,14 @@
     <Compile Include="Exceptions\ValidationException.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Extensions\" />
+    <Folder Include="Mapping\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{eaf08153-d2b3-47d0-b193-4748458bce27}</Project>
       <Name>Data</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Extensions\" />
-    <Folder Include="Mapping\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
