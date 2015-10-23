@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Data;
 
 namespace Logic.Entities
 {
-    public class Feed : IEntity, Data.IFeed
+    public class Feed : IEntity, IFeed
     {
         public Guid Id { get; set; }
         public string Title { get; set; }

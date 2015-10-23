@@ -17,5 +17,15 @@ namespace Logic.Entities
         {
             return Name;
         }
+
+        public static bool operator ==(Category a, Category b)
+        {
+            return string.CompareOrdinal(a.Name, b.Name) == 0;
+        }
+
+        public static bool operator !=(Category a, Category b)
+        {
+            return !(a == b);
+        }
     }
 }

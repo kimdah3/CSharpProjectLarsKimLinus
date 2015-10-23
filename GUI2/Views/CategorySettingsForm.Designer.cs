@@ -94,6 +94,7 @@ namespace GUI2.Views
             this.buttonAddCategory.TabIndex = 5;
             this.buttonAddCategory.Text = "Add Category";
             this.buttonAddCategory.UseVisualStyleBackColor = true;
+            this.buttonAddCategory.Click += new System.EventHandler(this.buttonAddCategory_Click);
             // 
             // buttonEditCategory
             // 
@@ -103,6 +104,7 @@ namespace GUI2.Views
             this.buttonEditCategory.TabIndex = 6;
             this.buttonEditCategory.Text = "Edit";
             this.buttonEditCategory.UseVisualStyleBackColor = true;
+            this.buttonEditCategory.Click += new System.EventHandler(this.buttonEditCategory_Click);
             // 
             // buttonDeleteCategory
             // 
@@ -112,6 +114,7 @@ namespace GUI2.Views
             this.buttonDeleteCategory.TabIndex = 7;
             this.buttonDeleteCategory.Text = "Delete";
             this.buttonDeleteCategory.UseVisualStyleBackColor = true;
+            this.buttonDeleteCategory.Click += new System.EventHandler(this.buttonDeleteCategory_Click);
             // 
             // buttonClose
             // 

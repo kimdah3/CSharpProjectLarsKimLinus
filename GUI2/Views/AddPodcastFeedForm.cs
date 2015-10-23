@@ -9,7 +9,7 @@ namespace GUI.Views
     public partial class AddPodcastFeedForm : Form
     {
         public Feed NewFeed { get; set; }
-        private HashSet<Category> _categories; 
+        private HashSet<Category> _categories;
 
         public AddPodcastFeedForm()
         {
@@ -28,18 +28,35 @@ namespace GUI.Views
 
         }
 
+        private Category GetSelectedCategory()
+        {
+            if (comboBoxCategories.SelectedIndex == -1)
+            {
+                return null;
+            }
+            return comboBoxCategories.SelectedItem as Category;
+        }
+
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             if (NewFeed != null)
             {
-                this.DialogResult = DialogResult.OK;
-                NewFeed.Category = new Category("asdsad");
+                NewFeed.Category = GetSelectedCategory();
+                if (NewFeed.Category != null)
+                {
+                    DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("SAda");
+                }
             }
             else
             {
-                this.DialogResult = DialogResult.Abort;
+                DialogResult = DialogResult.Abort;
                 MessageBox.Show("No new podcast added.");
             }
+
         }
 
         private void textBoxURL_Leave(object sender, EventArgs e)

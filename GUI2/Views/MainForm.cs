@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Windows.Forms;
 using GUI.Views;
 using GUI2.Views;
@@ -27,16 +26,15 @@ namespace GUI
         {
 
             AllFeeds = new List<Feed>();
-            Categories = new HashSet<Category> { new Category("Unspecified")};
+            Categories = new HashSet<Category> { new Category("Unspecified") };
 
             AllUris = new List<Uri>
             {
-                new Uri("http://alexosigge.libsyn.com/rss"),
+                new Uri(@"C:\temp\rss")
                 //new Uri("http://varvet.libsyn.com/rss"),
                 //new Uri("http://www.filipandfredrik.com/feed/"),
-                new Uri("http://www.radiohoudi.se/feed/podcast/")
+                //new Uri("http://www.radiohoudi.se/feed/podcast/")
             };
-
 
             foreach (var uri in AllUris)
             {
@@ -53,6 +51,7 @@ namespace GUI
 
         private void listBoxPodcastFeeds_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listBoxPodcastFeeds.SelectedIndex == -1) return; //Ends method if nothing selected
             var feed = (Feed)listBoxPodcastFeeds.SelectedItem;
             listBoxPodcastEpisodes.Items.Clear();
             foreach (var item in feed.CollectionFeedItems)
@@ -77,13 +76,7 @@ namespace GUI
         private void UpdateCategoryComboBox()
         {
             comboBoxFeedCategory.Items.Clear();
-
-            /*foreach (var feed in AllFeeds)
-            {
-                categories.Add(feed.Category.Name);
-            }*/
-
-            foreach(var category in Categories)
+            foreach (var category in Categories)
                 comboBoxFeedCategory.Items.Add(category);
 
         }
@@ -92,9 +85,7 @@ namespace GUI
         {
             listBoxPodcastFeeds.Items.Clear();
             foreach (var feed in AllFeeds)
-            {
                 listBoxPodcastFeeds.Items.Add(feed);
-            }
         }
 
         private void buttonPlayPodcastEpisode_Click(object sender, EventArgs e)
@@ -112,7 +103,8 @@ namespace GUI
 
                 if (categorySettingsForm.DialogResult == DialogResult.OK)
                 {
-                    MessageBox.Show("OK");
+                    this.Categories = categorySettingsForm.Categories;
+                    UpdateCategoryComboBox();
                 }
 
             }
@@ -122,6 +114,30 @@ namespace GUI
         { //Använder detta för att testa att serialisera. Körs när programmet stängs.
             Data.DataSerializer test = new Data.DataSerializer();
             test.SaveToFile(AllFeeds[0]);
+        }
+
+        private void comboBoxFeedCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxFeedCategory.SelectedIndex != -1)
+            {
+                var selectedCategory = comboBoxFeedCategory.SelectedItem as Category;
+                UpdateFeedListByCategory(selectedCategory);
+            }else
+            {
+                UpdateFeedList();
+            }
+        }
+
+        private void UpdateFeedListByCategory(Category category)
+        {
+            listBoxPodcastFeeds.Items.Clear();
+
+            foreach (var feed in AllFeeds)
+            {
+                if (feed.Category == category)
+                    listBoxPodcastFeeds.Items.Add(feed);
+            }
+
         }
     }
 }
