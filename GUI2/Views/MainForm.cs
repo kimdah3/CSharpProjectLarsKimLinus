@@ -117,5 +117,11 @@ namespace GUI
 
             }
         }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        { //Använder detta för att testa att serialisera. Körs när programmet stängs.
+            Data.DataSerializer test = new Data.DataSerializer();
+            test.SaveToFile(AllFeeds[0]);
+        }
     }
 }

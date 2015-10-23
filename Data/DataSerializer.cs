@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Data
 {
     public class DataSerializer
-    {/*
+    {
        string filepath;
       
         
@@ -17,13 +17,20 @@ namespace Data
             filepath = System.IO.Path.Combine(folder, "Feeds");
         }   
 
-        public void sparaTillFil(IFeed feed)
+        public void SaveToFile(IFeed feed)
         {
-       
+            var onePod = feed;
+            Console.WriteLine(onePod.Title);/*
             var xml = new System.Xml.Serialization.XmlSerializer(typeof(IFeed));
-            feed.
+            using(var f = System.IO.File.Open(filepath, System.IO.FileMode.Create))
+            {
+               
+                xml.Serialize(f, feed);
+                f.Flush();
+                f.Close();
+            }*/
         }
 
-        */
+        
     }
 }

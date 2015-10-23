@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-   public interface IFeed
+    public interface IFeed
     {
         Guid Id { get; set; }
         string Title { get; set; }
