@@ -3,7 +3,7 @@ using System.Runtime;
 
 namespace Logic.Entities
 {
-    public class FeedItem
+    public class FeedItem : Data.IFeedItem
     {
         public Guid Id { get; set; }
         public string Title { get; set; }

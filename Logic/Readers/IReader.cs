@@ -6,6 +6,6 @@ namespace Logic.Readers
 {
     public interface IReader
     {
-        IEnumerable<FeedItem> ReadFeedItems(Uri uri);
+        List<FeedItem> ReadFeedItems(Uri uri);
     }
 }

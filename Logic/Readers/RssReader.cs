@@ -9,9 +9,9 @@ namespace Logic.Readers
 {
     public class RssReader : IReader
     {
-        public IEnumerable<FeedItem> ReadFeedItems(Uri uri)
+        public List<FeedItem> ReadFeedItems(Uri uri)
         {
-            List<FeedItem> feedItems = new List<FeedItem>();
+            List<Data.IFeedItem> feedItems = new List<Data.IFeedItem>();
             SyndicationFeed syndicationFeed;
             using (XmlReader xmlReader = XmlReader.Create(uri.AbsoluteUri))
             {
@@ -34,7 +34,9 @@ namespace Logic.Readers
                 feedItems.Add(feedItem);
             }
 
-            return feedItems;
+            var ret = new List<FeedItem>();
+            feedItems.ForEach(x => ret.Add(new FeedItem() { Id = x.Id, Mp3Url = x.Mp3Url, PublishDate = x.PublishDate, Title = x.Title }));
+            return ret;
         }
 
         public Feed ReadFeed(Uri uri)
@@ -75,8 +77,9 @@ namespace Logic.Readers
             }
 
             //var categories = syndicationFeed.ElementExtensions.
-
-            feed = new Feed(Guid.NewGuid(), syndicationFeed.Title.Text, feedItems, uri, category);
+            var items = new List<Data.IFeedItem>();
+            feedItems.ForEach(x => items.Add(x));
+            feed = new Feed(Guid.NewGuid(), syndicationFeed.Title.Text, items, uri, category);
 
             return feed;
         }

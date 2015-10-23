@@ -40,6 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataSerializer.cs" />
+    <Compile Include="ICategory.cs" />
+    <Compile Include="IFeed.cs" />
+    <Compile Include="IFeedItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

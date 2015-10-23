@@ -2,7 +2,7 @@
 
 namespace Logic.Entities
 {
-    public class Category : IEntity
+    public class Category : IEntity, Data.ICategory
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
