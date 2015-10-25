@@ -21,10 +21,38 @@ namespace Logic.Entities
             Category = category;
         }
 
+        public Feed()
+        {
+            CollectionFeedItems = new List<IFeedItem>();
+        }
+
 
         public override string ToString()
         {
             return $"Title: {Title}";
+        }
+
+        public void addFeedItem(Guid ID, string title, Uri Mp3Url, DateTime PublishDate)
+        {
+
+            var Item = new FeedItem();
+
+            Item.Id = Id; Item.Title = title; Item.Mp3Url = Mp3Url; Item.PublishDate = PublishDate;
+            CollectionFeedItems.Add(Item);
+        }
+
+        public void setCategory(Guid Id, string Title)
+        {
+            if (Category != null)
+            {
+                Category.Id = Id;
+                Category.Name = Title;
+            }
+            else
+            {
+                Category = new Category(Title);
+                Category.Id = Id;
+            }
         }
     }
 }

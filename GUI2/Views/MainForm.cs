@@ -13,7 +13,7 @@ namespace GUI
     {
         public RssReader RssReader { get; set; }
         public List<Uri> AllUris { get; set; }
-        public List<Feed> AllFeeds { get; set; }
+        public List<Data.IFeed> AllFeeds { get; set; }
         public HashSet<Category> Categories { get; set; }
 
         public MainForm()
@@ -25,14 +25,16 @@ namespace GUI
         private void MainForm_Load(object sender, EventArgs e)
         {
 
-            AllFeeds = new List<Feed>();
+            AllFeeds = new List<Data.IFeed>();
             Categories = new HashSet<Category> { new Category("Unspecified") };
 
+            Data.DataSerializer Serializer = new Data.DataSerializer();
+            Serializer.LoadFromFile(LoadFeed);
             AllUris = new List<Uri>
             {
-                new Uri(@"C:\temp\rss")
-                //new Uri("http://varvet.libsyn.com/rss"),
-                //new Uri("http://www.filipandfredrik.com/feed/"),
+               // new Uri(@"C:\temp\rss")
+              //  new Uri("http://varvet.libsyn.com/rss"),
+               // new Uri("http://www.filipandfredrik.com/feed/"),
                 //new Uri("http://www.radiohoudi.se/feed/podcast/")
             };
 
@@ -113,7 +115,7 @@ namespace GUI
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         { //Använder detta för att testa att serialisera. Körs när programmet stängs.
             Data.DataSerializer test = new Data.DataSerializer();
-            test.SaveToFile(AllFeeds[0]);
+            test.SaveToFile(AllFeeds);
         }
 
         private void comboBoxFeedCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -138,6 +140,17 @@ namespace GUI
                     listBoxPodcastFeeds.Items.Add(feed);
             }
 
+        }
+
+        public void LoadFeed(Data.SerializerItem returFeed)
+        {
+            Feed feed = new Feed();
+            AllFeeds.Add(feed);
+            feed.Id = returFeed.Id;
+            feed.Title = returFeed.Title;
+            feed.Url = new Uri(returFeed.Url);
+            returFeed.CollectionFeedItems.ForEach(x => feed.addFeedItem(x.Id, x.Title, new Uri(x.Mp3Url), x.PublishDate));
+            feed.setCategory(returFeed.Category.Id, returFeed.Category.Name);
         }
     }
 }
