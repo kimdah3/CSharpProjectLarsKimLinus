@@ -33,3 +33,10 @@ C:\Users\Linus\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\Logic\bin\
 C:\Users\Linus\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\Logic\obj\Debug\Logic.csprojResolveAssemblyReference.cache
 C:\Users\Linus\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\Logic\obj\Debug\Logic.dll
 C:\Users\Linus\Documents\GitHubVisualStudio\CSharpProjectLarsKimLinus\Logic\obj\Debug\Logic.pdb
+C:\Users\Kim\Documents\GitHub\CSharpProjectPodcast\CSharpProjectLarsKimLinus\Logic\bin\Debug\Logic.dll
+C:\Users\Kim\Documents\GitHub\CSharpProjectPodcast\CSharpProjectLarsKimLinus\Logic\bin\Debug\Logic.pdb
+C:\Users\Kim\Documents\GitHub\CSharpProjectPodcast\CSharpProjectLarsKimLinus\Logic\bin\Debug\Data.dll
+C:\Users\Kim\Documents\GitHub\CSharpProjectPodcast\CSharpProjectLarsKimLinus\Logic\bin\Debug\Data.pdb
+C:\Users\Kim\Documents\GitHub\CSharpProjectPodcast\CSharpProjectLarsKimLinus\Logic\obj\Debug\Logic.csprojResolveAssemblyReference.cache
+C:\Users\Kim\Documents\GitHub\CSharpProjectPodcast\CSharpProjectLarsKimLinus\Logic\obj\Debug\Logic.dll
+C:\Users\Kim\Documents\GitHub\CSharpProjectPodcast\CSharpProjectLarsKimLinus\Logic\obj\Debug\Logic.pdb

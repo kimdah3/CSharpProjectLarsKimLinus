@@ -61,7 +61,15 @@ namespace Logic.Readers
                 feedItem.Id = Guid.TryParse(item.Id, out id) ? id : new Guid();
 
                 feedItem.Title = item.Title.Text;
-                feedItem.Mp3Url = item.Links[1].Uri;
+                if (item.Links.Count > 1)
+                {
+                    feedItem.Mp3Url = item.Links[1].Uri;
+                }
+                else
+                {
+                    feedItem.Mp3Url = item.Links[0].Uri;
+
+                }
                 feedItem.PublishDate = item.PublishDate.DateTime;
                 feedItems.Add(feedItem);
             }
