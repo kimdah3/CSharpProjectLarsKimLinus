@@ -44,17 +44,18 @@ namespace GUI.Views
                 NewFeed.Category = GetSelectedCategory();
                 if (NewFeed.Category != null)
                 {
+                    NewFeed.Title = textBoxTitle.Text;
+                    NewFeed.UpdateInterval = Convert.ToInt32(textBoxUpdateInterval.Text);
                     DialogResult = DialogResult.OK;
                 }
                 else
                 {
-                    MessageBox.Show("SAda");
+                    MessageBox.Show("Must add a Category");
                 }
             }
             else
             {
-                DialogResult = DialogResult.Abort;
-                MessageBox.Show("No new podcast added.");
+                MessageBox.Show("Can't add empty feed. Please insert values.");
             }
 
         }
@@ -65,16 +66,18 @@ namespace GUI.Views
             try
             {
                 NewFeed = rssReader.ReadFeed(new Uri(textBoxURL.Text));
-                labelTitleShow.Text = NewFeed.Title + ", episodes: " + NewFeed.CollectionFeedItems.Count;
+                textBoxTitle.Text = NewFeed.Title;
+                labelEpisodes.Text = "Episodes: " + NewFeed.CollectionFeedItems.Count;
+
             }
             catch (UriFormatException ex)
             {
-                labelTitleShow.Text = ex.Message;
+                labelTitle.Text = ex.Message;
                 NewFeed = null;
             }
             catch (Exception ex)
             {
-                labelTitleShow.Text = ex.Message;
+                labelTitle.Text = ex.Message;
                 NewFeed = null;
             }
         }

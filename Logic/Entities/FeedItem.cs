@@ -9,11 +9,16 @@ namespace Logic.Entities
         public string Title { get; set; }
         public Uri Mp3Url { get; set; }
         public DateTime PublishDate { get; set; }
+        public bool IsUsed { get; set; }
 
 
         public override string ToString()
         {
-            return Title + " " + PublishDate.ToShortDateString();
+
+            if (IsUsed)
+                return Title + " " + PublishDate.ToShortDateString() + "  LISTENED TOO.";
+            else
+                return Title + " " + PublishDate.ToShortDateString();
         }
     }
 }

@@ -59,10 +59,10 @@ namespace Logic.Readers
                 Guid id;
 
                 feedItem.Id = Guid.TryParse(item.Id, out id) ? id : new Guid();
-
                 feedItem.Title = item.Title.Text;
                 feedItem.Mp3Url = item.Links.Count > 1 ? item.Links[1].Uri : item.Links[0].Uri;
                 feedItem.PublishDate = item.PublishDate.DateTime;
+                feedItem.IsUsed = false;
                 feedItems.Add(feedItem);
             }
 
@@ -78,7 +78,7 @@ namespace Logic.Readers
 
             var items = new List<Data.IFeedItem>();
             feedItems.ForEach(x => items.Add(x));
-            feed = new Feed(Guid.NewGuid(), syndicationFeed.Title.Text, items, uri, category);
+            feed = new Feed(Guid.NewGuid(), syndicationFeed.Title.Text, items, uri, category,0);
 
             return feed;
         }

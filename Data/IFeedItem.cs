@@ -12,5 +12,6 @@ namespace Data
         string Title { get; set; }
         Uri Mp3Url { get; set; }
         DateTime PublishDate { get; set; }
+        bool IsUsed { get; set; }
     }
 }

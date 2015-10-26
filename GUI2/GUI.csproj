@@ -59,6 +59,12 @@
     <Compile Include="Views\EditCategoryForm.Designer.cs">
       <DependentUpon>EditCategoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\EditPodcastFeedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EditPodcastFeedForm.Designer.cs">
+      <DependentUpon>EditPodcastFeedForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EditCategoryForm.resx">
       <DependentUpon>EditCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EditPodcastFeedForm.resx">
+      <DependentUpon>EditPodcastFeedForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -5,5 +5,7 @@ namespace Logic.Exceptions
     public class ValidationException : Exception
     {
 
+
+
     }
 }

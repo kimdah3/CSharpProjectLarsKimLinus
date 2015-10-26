@@ -11,14 +11,17 @@ namespace Logic.Entities
         public List<Data.IFeedItem> CollectionFeedItems { get; set; }
         public Uri Url { get; set; }
         public Data.ICategory Category { get; set; }
+        public int UpdateInterval { get; set; }
 
-        public Feed(Guid id, string title, List<Data.IFeedItem> collectionFeedItems, Uri url, Category category)
+
+        public Feed(Guid id, string title, List<Data.IFeedItem> collectionFeedItems, Uri url, Category category, int updateInterval)
         {
             Id = id;
             Title = title;
             CollectionFeedItems = collectionFeedItems;
             Url = url;
             Category = category;
+            UpdateInterval = updateInterval;
         }
 
         public Feed()
@@ -35,9 +38,14 @@ namespace Logic.Entities
         public void addFeedItem(Guid ID, string title, Uri Mp3Url, DateTime PublishDate)
         {
 
-            var Item = new FeedItem();
+            var Item = new FeedItem
+            {
+                Id = Id,
+                Title = title,
+                Mp3Url = Mp3Url,
+                PublishDate = PublishDate
+            };
 
-            Item.Id = Id; Item.Title = title; Item.Mp3Url = Mp3Url; Item.PublishDate = PublishDate;
             CollectionFeedItems.Add(Item);
         }
 

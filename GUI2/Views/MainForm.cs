@@ -11,7 +11,6 @@ namespace GUI
 {
     public partial class MainForm : Form
     {
-        public RssReader RssReader { get; set; }
         public List<Uri> AllUris { get; set; }
         public List<Data.IFeed> AllFeeds { get; set; }
         public HashSet<Category> Categories { get; set; }
@@ -20,18 +19,15 @@ namespace GUI
         public MainForm()
         {
             InitializeComponent();
-            RssReader = new RssReader();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
 
             AllFeeds = new List<Data.IFeed>();
-
             Categories = new HashSet<Category> { new Category("All"), new Category("Unspecified") };
 
             var Serializer = new Data.DataSerializer();
-
             Serializer.LoadFromFile(LoadFeed);
 
             foreach (var feed in AllFeeds)
@@ -81,11 +77,22 @@ namespace GUI
             listBoxPodcastFeeds.Items.Clear();
             foreach (var feed in AllFeeds)
                 listBoxPodcastFeeds.Items.Add(feed);
+
         }
 
         private void buttonPlayPodcastEpisode_Click(object sender, EventArgs e)
         {
             var feedItem = (FeedItem)listBoxPodcastEpisodes.SelectedItem;
+            var feed = listBoxPodcastFeeds.SelectedItem as Feed;
+            foreach (var item in feed.CollectionFeedItems)
+            {
+                if (item.Equals(feedItem))
+                {
+                    item.IsUsed = true;
+                }
+
+            }
+
             Process.Start(feedItem.Mp3Url.AbsoluteUri);
 
         }
@@ -151,5 +158,37 @@ namespace GUI
             returFeed.CollectionFeedItems.ForEach(x => feed.addFeedItem(x.Id, x.Title, new Uri(x.Mp3Url), x.PublishDate));
             feed.setCategory(returFeed.Category.Id, returFeed.Category.Name);
         }
+
+        private void buttonDeletePodcastFeed_Click(object sender, EventArgs e)
+        {
+            var targetFeed = listBoxPodcastFeeds.SelectedItem as Feed;
+            AllFeeds.Remove(targetFeed);
+            UpdateFeedList();
+        }
+
+        private void buttonEditPodcastFeed_Click(object sender, EventArgs e)
+        {
+
+            if (listBoxPodcastFeeds.SelectedIndex == -1) return;
+            var targetFeed = listBoxPodcastFeeds.SelectedItem as Feed;
+            AllFeeds.Remove(targetFeed);
+
+            using (var editPodcastFeedForm = new EditPodcastFeedForm(targetFeed, Categories))
+            {
+                editPodcastFeedForm.ShowDialog();
+
+                if (editPodcastFeedForm.DialogResult == DialogResult.OK)
+                {
+                    AllFeeds.Add(editPodcastFeedForm.EditedFeed);
+                }
+                else
+                {
+                    AllFeeds.Add(targetFeed);
+                }
+            }
+            if (comboBoxFeedCategory.SelectedIndex != -1)
+                UpdateFeedListByCategory(comboBoxFeedCategory.SelectedItem as Category);
+        }
+
     }
 }
