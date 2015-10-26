@@ -16,6 +16,7 @@ namespace GUI
         public List<Data.IFeed> AllFeeds { get; set; }
         public HashSet<Category> Categories { get; set; }
 
+
         public MainForm()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace GUI
 
             AllFeeds = new List<Data.IFeed>();
 
-            Categories = new HashSet<Category> { new Category("All") };
+            Categories = new HashSet<Category> { new Category("All"), new Category("Unspecified") };
 
             var Serializer = new Data.DataSerializer();
 
@@ -36,7 +37,8 @@ namespace GUI
             foreach (var feed in AllFeeds)
             {
                 listBoxPodcastFeeds.Items.Add(feed);
-                Categories.Add((Category)feed.Category);
+                if (string.Compare(feed.Category.Name, "Unspecified") != 0)
+                    Categories.Add((Category)feed.Category);
             }
 
             UpdateCategoryComboBox();
@@ -90,7 +92,7 @@ namespace GUI
 
         private void buttonAddCategory_Click(object sender, EventArgs e)
         {
-            using (var categorySettingsForm = new CategorySettingsForm(Categories))
+            using (var categorySettingsForm = new CategorySettingsForm(Categories, AllFeeds))
             {
                 categorySettingsForm.ShowDialog();
 
@@ -115,7 +117,7 @@ namespace GUI
             {
                 var selectedCategory = comboBoxFeedCategory.SelectedItem as Category;
                 if (string.Compare(selectedCategory.Name, "All") == 0) // Om valet är alla kategorier
-                    UpdateFeedList(); 
+                    UpdateFeedList();
                 else
                 {
                     UpdateFeedListByCategory(selectedCategory);
@@ -133,7 +135,7 @@ namespace GUI
 
             foreach (var feed in AllFeeds)
             {
-                if (feed.Category == category)
+                if ((Category)feed.Category == category)
                     listBoxPodcastFeeds.Items.Add(feed);
             }
 
