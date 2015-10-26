@@ -41,51 +41,57 @@
             // labelURL
             // 
             this.labelURL.AutoSize = true;
-            this.labelURL.Location = new System.Drawing.Point(12, 9);
+            this.labelURL.Location = new System.Drawing.Point(8, 6);
+            this.labelURL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelURL.Name = "labelURL";
-            this.labelURL.Size = new System.Drawing.Size(46, 20);
+            this.labelURL.Size = new System.Drawing.Size(32, 13);
             this.labelURL.TabIndex = 0;
             this.labelURL.Text = "URL:";
             // 
             // textBoxURL
             // 
-            this.textBoxURL.Location = new System.Drawing.Point(12, 37);
+            this.textBoxURL.Location = new System.Drawing.Point(8, 24);
+            this.textBoxURL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxURL.Name = "textBoxURL";
-            this.textBoxURL.Size = new System.Drawing.Size(546, 26);
+            this.textBoxURL.Size = new System.Drawing.Size(365, 20);
             this.textBoxURL.TabIndex = 1;
             this.textBoxURL.Leave += new System.EventHandler(this.textBoxURL_Leave);
             // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Location = new System.Drawing.Point(11, 76);
+            this.labelTitle.Location = new System.Drawing.Point(7, 49);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(42, 20);
+            this.labelTitle.Size = new System.Drawing.Size(30, 13);
             this.labelTitle.TabIndex = 2;
             this.labelTitle.Text = "Title:";
             // 
             // labelTitleShow
             // 
             this.labelTitleShow.AutoSize = true;
-            this.labelTitleShow.Location = new System.Drawing.Point(19, 106);
+            this.labelTitleShow.Location = new System.Drawing.Point(13, 69);
+            this.labelTitleShow.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitleShow.Name = "labelTitleShow";
-            this.labelTitleShow.Size = new System.Drawing.Size(0, 20);
+            this.labelTitleShow.Size = new System.Drawing.Size(0, 13);
             this.labelTitleShow.TabIndex = 3;
             // 
             // labelAddCategory
             // 
             this.labelAddCategory.AutoSize = true;
-            this.labelAddCategory.Location = new System.Drawing.Point(11, 161);
+            this.labelAddCategory.Location = new System.Drawing.Point(7, 105);
+            this.labelAddCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAddCategory.Name = "labelAddCategory";
-            this.labelAddCategory.Size = new System.Drawing.Size(77, 20);
+            this.labelAddCategory.Size = new System.Drawing.Size(52, 13);
             this.labelAddCategory.TabIndex = 5;
             this.labelAddCategory.Text = "Category:";
             // 
             // buttonClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(463, 240);
+            this.buttonClose.Location = new System.Drawing.Point(309, 156);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(95, 32);
+            this.buttonClose.Size = new System.Drawing.Size(63, 21);
             this.buttonClose.TabIndex = 7;
             this.buttonClose.Text = "Close";
             this.buttonClose.UseVisualStyleBackColor = true;
@@ -93,9 +99,10 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(356, 240);
+            this.buttonAdd.Location = new System.Drawing.Point(237, 156);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(101, 32);
+            this.buttonAdd.Size = new System.Drawing.Size(67, 21);
             this.buttonAdd.TabIndex = 8;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -103,17 +110,19 @@
             // 
             // comboBoxCategories
             // 
+            this.comboBoxCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategories.FormattingEnabled = true;
-            this.comboBoxCategories.Location = new System.Drawing.Point(12, 189);
+            this.comboBoxCategories.Location = new System.Drawing.Point(8, 123);
+            this.comboBoxCategories.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxCategories.Name = "comboBoxCategories";
-            this.comboBoxCategories.Size = new System.Drawing.Size(546, 28);
+            this.comboBoxCategories.Size = new System.Drawing.Size(365, 21);
             this.comboBoxCategories.TabIndex = 9;
             // 
             // AddPodcastFeedForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 293);
+            this.ClientSize = new System.Drawing.Size(380, 190);
             this.Controls.Add(this.comboBoxCategories);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.buttonClose);
@@ -122,6 +131,7 @@
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.textBoxURL);
             this.Controls.Add(this.labelURL);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddPodcastFeedForm";
             this.Text = "AddPodcastFeedForm";
             this.Load += new System.EventHandler(this.AddPodcastFeedForm_Load);

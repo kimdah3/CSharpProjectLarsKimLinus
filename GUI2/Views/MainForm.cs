@@ -26,26 +26,17 @@ namespace GUI
         {
 
             AllFeeds = new List<Data.IFeed>();
-            Categories = new HashSet<Category> { new Category("Unspecified") };
 
-            Data.DataSerializer Serializer = new Data.DataSerializer();
+            Categories = new HashSet<Category> { new Category("All") };
+
+            var Serializer = new Data.DataSerializer();
+
             Serializer.LoadFromFile(LoadFeed);
-            AllUris = new List<Uri>
-            {
-               // new Uri(@"C:\temp\rss")
-              //  new Uri("http://varvet.libsyn.com/rss"),
-               // new Uri("http://www.filipandfredrik.com/feed/"),
-                //new Uri("http://www.radiohoudi.se/feed/podcast/")
-            };
-
-            foreach (var uri in AllUris)
-            {
-                AllFeeds.Add(RssReader.ReadFeed(uri));
-            }
 
             foreach (var feed in AllFeeds)
             {
                 listBoxPodcastFeeds.Items.Add(feed);
+                Categories.Add((Category)feed.Category);
             }
 
             UpdateCategoryComboBox();
@@ -123,8 +114,14 @@ namespace GUI
             if (comboBoxFeedCategory.SelectedIndex != -1)
             {
                 var selectedCategory = comboBoxFeedCategory.SelectedItem as Category;
-                UpdateFeedListByCategory(selectedCategory);
-            }else
+                if (string.Compare(selectedCategory.Name, "All") == 0) // Om valet är alla kategorier
+                    UpdateFeedList(); 
+                else
+                {
+                    UpdateFeedListByCategory(selectedCategory);
+                }
+            }
+            else
             {
                 UpdateFeedList();
             }
@@ -144,7 +141,7 @@ namespace GUI
 
         public void LoadFeed(Data.SerializerItem returFeed)
         {
-            Feed feed = new Feed();
+            var feed = new Feed();
             AllFeeds.Add(feed);
             feed.Id = returFeed.Id;
             feed.Title = returFeed.Title;

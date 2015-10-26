@@ -41,45 +41,48 @@
             // labelPodcastFeeds
             // 
             this.labelPodcastFeeds.AutoSize = true;
-            this.labelPodcastFeeds.Location = new System.Drawing.Point(12, 23);
+            this.labelPodcastFeeds.Location = new System.Drawing.Point(8, 15);
+            this.labelPodcastFeeds.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPodcastFeeds.Name = "labelPodcastFeeds";
-            this.labelPodcastFeeds.Size = new System.Drawing.Size(111, 20);
+            this.labelPodcastFeeds.Size = new System.Drawing.Size(75, 13);
             this.labelPodcastFeeds.TabIndex = 0;
             this.labelPodcastFeeds.Text = "Podcast feeds";
             // 
             // labelPodcastEpisodes
             // 
             this.labelPodcastEpisodes.AutoSize = true;
-            this.labelPodcastEpisodes.Location = new System.Drawing.Point(522, 23);
+            this.labelPodcastEpisodes.Location = new System.Drawing.Point(348, 15);
+            this.labelPodcastEpisodes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPodcastEpisodes.Name = "labelPodcastEpisodes";
-            this.labelPodcastEpisodes.Size = new System.Drawing.Size(135, 20);
+            this.labelPodcastEpisodes.Size = new System.Drawing.Size(91, 13);
             this.labelPodcastEpisodes.TabIndex = 2;
             this.labelPodcastEpisodes.Text = "Podcast episodes";
             // 
             // listBoxPodcastFeeds
             // 
             this.listBoxPodcastFeeds.FormattingEnabled = true;
-            this.listBoxPodcastFeeds.ItemHeight = 20;
-            this.listBoxPodcastFeeds.Location = new System.Drawing.Point(16, 97);
+            this.listBoxPodcastFeeds.Location = new System.Drawing.Point(11, 63);
+            this.listBoxPodcastFeeds.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxPodcastFeeds.Name = "listBoxPodcastFeeds";
-            this.listBoxPodcastFeeds.Size = new System.Drawing.Size(458, 344);
+            this.listBoxPodcastFeeds.Size = new System.Drawing.Size(307, 225);
             this.listBoxPodcastFeeds.TabIndex = 4;
             this.listBoxPodcastFeeds.SelectedIndexChanged += new System.EventHandler(this.listBoxPodcastFeeds_SelectedIndexChanged);
             // 
             // listBoxPodcastEpisodes
             // 
             this.listBoxPodcastEpisodes.FormattingEnabled = true;
-            this.listBoxPodcastEpisodes.ItemHeight = 20;
-            this.listBoxPodcastEpisodes.Location = new System.Drawing.Point(526, 54);
+            this.listBoxPodcastEpisodes.Location = new System.Drawing.Point(351, 35);
+            this.listBoxPodcastEpisodes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxPodcastEpisodes.Name = "listBoxPodcastEpisodes";
-            this.listBoxPodcastEpisodes.Size = new System.Drawing.Size(452, 384);
+            this.listBoxPodcastEpisodes.Size = new System.Drawing.Size(303, 251);
             this.listBoxPodcastEpisodes.TabIndex = 5;
             // 
             // buttonAddPodcastFeed
             // 
-            this.buttonAddPodcastFeed.Location = new System.Drawing.Point(16, 452);
+            this.buttonAddPodcastFeed.Location = new System.Drawing.Point(11, 294);
+            this.buttonAddPodcastFeed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAddPodcastFeed.Name = "buttonAddPodcastFeed";
-            this.buttonAddPodcastFeed.Size = new System.Drawing.Size(112, 38);
+            this.buttonAddPodcastFeed.Size = new System.Drawing.Size(75, 25);
             this.buttonAddPodcastFeed.TabIndex = 6;
             this.buttonAddPodcastFeed.Text = "Add Feed";
             this.buttonAddPodcastFeed.UseVisualStyleBackColor = true;
@@ -87,9 +90,10 @@
             // 
             // buttonPlayPodcastEpisode
             // 
-            this.buttonPlayPodcastEpisode.Location = new System.Drawing.Point(526, 452);
+            this.buttonPlayPodcastEpisode.Location = new System.Drawing.Point(351, 294);
+            this.buttonPlayPodcastEpisode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonPlayPodcastEpisode.Name = "buttonPlayPodcastEpisode";
-            this.buttonPlayPodcastEpisode.Size = new System.Drawing.Size(104, 38);
+            this.buttonPlayPodcastEpisode.Size = new System.Drawing.Size(69, 25);
             this.buttonPlayPodcastEpisode.TabIndex = 7;
             this.buttonPlayPodcastEpisode.Text = "Play";
             this.buttonPlayPodcastEpisode.UseVisualStyleBackColor = true;
@@ -97,18 +101,21 @@
             // 
             // comboBoxFeedCategory
             // 
+            this.comboBoxFeedCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFeedCategory.FormattingEnabled = true;
-            this.comboBoxFeedCategory.Location = new System.Drawing.Point(16, 54);
+            this.comboBoxFeedCategory.Location = new System.Drawing.Point(11, 35);
+            this.comboBoxFeedCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxFeedCategory.Name = "comboBoxFeedCategory";
-            this.comboBoxFeedCategory.Size = new System.Drawing.Size(242, 28);
+            this.comboBoxFeedCategory.Size = new System.Drawing.Size(163, 21);
             this.comboBoxFeedCategory.TabIndex = 8;
             this.comboBoxFeedCategory.SelectedIndexChanged += new System.EventHandler(this.comboBoxFeedCategory_SelectedIndexChanged);
             // 
             // buttonCategorySettings
             // 
-            this.buttonCategorySettings.Location = new System.Drawing.Point(314, 54);
+            this.buttonCategorySettings.Location = new System.Drawing.Point(209, 35);
+            this.buttonCategorySettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonCategorySettings.Name = "buttonCategorySettings";
-            this.buttonCategorySettings.Size = new System.Drawing.Size(160, 32);
+            this.buttonCategorySettings.Size = new System.Drawing.Size(107, 21);
             this.buttonCategorySettings.TabIndex = 9;
             this.buttonCategorySettings.Text = "Category Settings";
             this.buttonCategorySettings.UseVisualStyleBackColor = true;
@@ -116,9 +123,9 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 665);
+            this.ClientSize = new System.Drawing.Size(660, 432);
             this.Controls.Add(this.buttonCategorySettings);
             this.Controls.Add(this.comboBoxFeedCategory);
             this.Controls.Add(this.buttonPlayPodcastEpisode);
@@ -127,6 +134,7 @@
             this.Controls.Add(this.listBoxPodcastFeeds);
             this.Controls.Add(this.labelPodcastEpisodes);
             this.Controls.Add(this.labelPodcastFeeds);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.Text = "Pod";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);

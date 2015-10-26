@@ -11,9 +11,9 @@ namespace Logic.Readers
     {
         public List<FeedItem> ReadFeedItems(Uri uri)
         {
-            List<Data.IFeedItem> feedItems = new List<Data.IFeedItem>();
+            var feedItems = new List<Data.IFeedItem>();
             SyndicationFeed syndicationFeed;
-            using (XmlReader xmlReader = XmlReader.Create(uri.AbsoluteUri))
+            using (var xmlReader = XmlReader.Create(uri.AbsoluteUri))
             {
                 syndicationFeed = SyndicationFeed.Load(xmlReader);
                 xmlReader.Close();
@@ -21,8 +21,8 @@ namespace Logic.Readers
 
             foreach (var item in syndicationFeed.Items)
             {
-                FeedItem feedItem = new FeedItem();
-                Guid id = Guid.NewGuid();
+                var feedItem = new FeedItem();
+                var id = Guid.NewGuid();
                 if (Guid.TryParse(item.Id, out id))
                     feedItem.Id = new Guid(item.Id); // Inte alla feeds har korrekt ID därför krävs validering.
                 else
@@ -55,21 +55,13 @@ namespace Logic.Readers
             if (syndicationFeed == null) return null;
             foreach (var item in syndicationFeed.Items)
             {
-                FeedItem feedItem = new FeedItem();
+                var feedItem = new FeedItem();
                 Guid id;
 
                 feedItem.Id = Guid.TryParse(item.Id, out id) ? id : new Guid();
 
                 feedItem.Title = item.Title.Text;
-                if (item.Links.Count > 1)
-                {
-                    feedItem.Mp3Url = item.Links[1].Uri;
-                }
-                else
-                {
-                    feedItem.Mp3Url = item.Links[0].Uri;
-
-                }
+                feedItem.Mp3Url = item.Links.Count > 1 ? item.Links[1].Uri : item.Links[0].Uri;
                 feedItem.PublishDate = item.PublishDate.DateTime;
                 feedItems.Add(feedItem);
             }
@@ -84,7 +76,6 @@ namespace Logic.Readers
 
             }
 
-            //var categories = syndicationFeed.ElementExtensions.
             var items = new List<Data.IFeedItem>();
             feedItems.ForEach(x => items.Add(x));
             feed = new Feed(Guid.NewGuid(), syndicationFeed.Title.Text, items, uri, category);
