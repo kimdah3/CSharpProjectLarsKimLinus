@@ -27,3 +27,8 @@ C:\Users\Kim\Documents\GitHub\CSharpProjectPodcast\CSharpProjectLarsKimLinus\Dat
 C:\Users\Kim\Documents\GitHub\CSharpProjectPodcast\CSharpProjectLarsKimLinus\Data\obj\Debug\Data.pdb
 C:\Users\Kim\Documents\GitHub\CSharpProjectPodcast\CSharpProjectLarsKimLinus\Data\bin\Debug\Data.dll
 C:\Users\Kim\Documents\GitHub\CSharpProjectPodcast\CSharpProjectLarsKimLinus\Data\bin\Debug\Data.pdb
+C:\Users\Linus\Desktop\Temp\CSharpProjectLarsKimLinus\Data\bin\Debug\Data.dll
+C:\Users\Linus\Desktop\Temp\CSharpProjectLarsKimLinus\Data\bin\Debug\Data.pdb
+C:\Users\Linus\Desktop\Temp\CSharpProjectLarsKimLinus\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\Users\Linus\Desktop\Temp\CSharpProjectLarsKimLinus\Data\obj\Debug\Data.dll
+C:\Users\Linus\Desktop\Temp\CSharpProjectLarsKimLinus\Data\obj\Debug\Data.pdb

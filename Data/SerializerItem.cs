@@ -18,11 +18,12 @@ namespace Data
         public CategoryItem Category { get; set; }
         
 
-      public  SerializerItem(IFeed Feed)
+
+        public  SerializerItem(IFeed Feed)
         {
             this.Id = Feed.Id;
             this.Title = Feed.Title;
-            CollectionFeedItems = Feed.CollectionFeedItems.Select(x => new FeedItems(x.Id, x.Title, x.Mp3Url, x.PublishDate)).ToList();
+            CollectionFeedItems = Feed.CollectionFeedItems.Select(x => new FeedItems(x.Id, x.Title, x.Mp3Url, x.PublishDate, x.IsUsed)).ToList();
             Url = Feed.Url.ToString();
             Category = new CategoryItem(Feed.Category.Id, Feed.Category.Name);
         }
@@ -63,12 +64,15 @@ namespace Data
         public string Title { get; set; }
         public string Mp3Url { get; set; }
         public DateTime PublishDate { get; set; }
-        public FeedItems(Guid Id, string Title, Uri Mp3Url, DateTime PublishDate)
+        public bool IsUsed { get; set; }
+        public FeedItems(Guid Id, string Title, Uri Mp3Url, DateTime PublishDate, bool IsUsed)
+        
         {
             this.Id = Id;
             this.Title = Title;
             this.Mp3Url = Mp3Url.ToString();
             this.PublishDate = PublishDate;
+            this.IsUsed = IsUsed;
         }
         public FeedItems()
         {
