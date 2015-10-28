@@ -142,7 +142,8 @@ namespace GUI
 
             foreach (var feed in AllFeeds)
             {
-                if ((Category)feed.Category == category)
+                var c = feed.Category as Category;
+                if (string.Compare(c.Name, category.Name) == 0)
                     listBoxPodcastFeeds.Items.Add(feed);
             }
 

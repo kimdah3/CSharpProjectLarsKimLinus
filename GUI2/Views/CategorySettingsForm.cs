@@ -47,7 +47,7 @@ namespace GUI2.Views
         {
             var newCategory = new Category(textBoxCategoryName.Text);
 
-            foreach (var category in Categories.Where(category => category == newCategory))
+            foreach (var category in Categories.Where(category => string.Compare(category.Name, newCategory.Name) == 0))
             {
                 newCategory = category;
             }
@@ -76,13 +76,14 @@ namespace GUI2.Views
 
             foreach (var feed in AllFeeds)
             {
-                if ((Category) feed.Category == category)
+                var c = feed.Category as Category;
+                if (string.Compare(c.Name, category.Name) == 0)
                     feed.Category = unspecifiedCategory;
             }
 
 
             foreach (var c in Categories) // Ser till att en category inte ändras till samma namns som en befintlig.
-                if (unspecifiedCategory == c)
+                if (string.Compare(unspecifiedCategory.Name, c.Name) == 0)
                     unspecifiedCategory = c;
 
             Categories.Add(unspecifiedCategory);
@@ -100,7 +101,8 @@ namespace GUI2.Views
 
             foreach (var feed in AllFeeds)
             {
-                if ((Category) feed.Category == category)
+                var c = feed.Category as Category;
+                if (string.Compare(c.Name,category.Name) == 0)
                     feed.Category = null;
             }
 
@@ -113,7 +115,7 @@ namespace GUI2.Views
                     category = editCategoryForm.NewCategory;
 
                     foreach (var c in Categories) // Ser till att en category inte ändras till samma namns som en befintlig.
-                        if (category == c)
+                        if (string.Compare(category.Name, c.Name)==0)
                             category = c;
                     Categories.Add(category);
                 }
@@ -125,7 +127,8 @@ namespace GUI2.Views
 
             foreach (var feed in AllFeeds)
             {
-                if ((Category)feed.Category == null)
+                var c = feed.Category as Category;
+                if (c == null)
                     feed.Category = category;
             }
 

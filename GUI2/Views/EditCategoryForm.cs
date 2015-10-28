@@ -28,14 +28,14 @@ namespace GUI2.Views
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
+        { 
+            DialogResult = DialogResult.Cancel;
         }
 
         private void buttonChange_Click(object sender, EventArgs e)
         {
             NewCategory.Name = textBoxNewName.Text;
-            this.DialogResult = DialogResult.OK;
+            DialogResult = DialogResult.OK;
         }
     }
 }
