@@ -13,6 +13,7 @@ namespace Data
         List<IFeedItem> CollectionFeedItems { get; set; }
         Uri Url { get; set; }
         ICategory Category { get; set; }
+        int UpdateInterval { get; set; }
 
         void addFeedItem(Guid ID, string title, Uri Mp3Url, DateTime PublishDate);
 

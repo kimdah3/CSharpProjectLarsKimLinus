@@ -16,7 +16,7 @@ namespace Data
         public List<FeedItems> CollectionFeedItems { get; set; }
         public string Url { get; set; }
         public CategoryItem Category { get; set; }
-        
+        public int UpdateInterval { get; set; }
 
 
         public  SerializerItem(IFeed Feed)
@@ -26,6 +26,7 @@ namespace Data
             CollectionFeedItems = Feed.CollectionFeedItems.Select(x => new FeedItems(x.Id, x.Title, x.Mp3Url, x.PublishDate, x.IsUsed)).ToList();
             Url = Feed.Url.ToString();
             Category = new CategoryItem(Feed.Category.Id, Feed.Category.Name);
+            this.UpdateInterval = Feed.UpdateInterval;
         }
        
         public SerializerItem()
