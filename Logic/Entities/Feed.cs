@@ -35,7 +35,7 @@ namespace Logic.Entities
             return $"Title: {Title}";
         }
 
-        public void addFeedItem(Guid ID, string title, Uri Mp3Url, DateTime PublishDate)
+        public void addFeedItem(Guid ID, string title, Uri Mp3Url, DateTime PublishDate, bool IsUsed)
         {
 
             var Item = new FeedItem
@@ -43,7 +43,8 @@ namespace Logic.Entities
                 Id = Id,
                 Title = title,
                 Mp3Url = Mp3Url,
-                PublishDate = PublishDate
+                PublishDate = PublishDate,
+                IsUsed = IsUsed
             };
 
             CollectionFeedItems.Add(Item);

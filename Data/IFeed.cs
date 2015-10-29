@@ -15,7 +15,7 @@ namespace Data
         ICategory Category { get; set; }
         int UpdateInterval { get; set; }
 
-        void addFeedItem(Guid ID, string title, Uri Mp3Url, DateTime PublishDate);
+        void addFeedItem(Guid ID, string title, Uri Mp3Url, DateTime PublishDate, bool IsUsed);
 
         void setCategory(Guid Id, string Title);
     }

@@ -38,6 +38,8 @@ namespace GUI
             }
 
             UpdateCategoryComboBox();
+            Console.WriteLine(AllFeeds[0].CollectionFeedItems[0].IsUsed);
+            
         }
 
         private void listBoxPodcastFeeds_SelectedIndexChanged(object sender, EventArgs e)
@@ -156,8 +158,9 @@ namespace GUI
             feed.Id = returFeed.Id;
             feed.Title = returFeed.Title;
             feed.Url = new Uri(returFeed.Url);
-            returFeed.CollectionFeedItems.ForEach(x => feed.addFeedItem(x.Id, x.Title, new Uri(x.Mp3Url), x.PublishDate));
+            returFeed.CollectionFeedItems.ForEach(x => feed.addFeedItem(x.Id, x.Title, new Uri(x.Mp3Url), x.PublishDate, x.IsUsed));
             feed.setCategory(returFeed.Category.Id, returFeed.Category.Name);
+            feed.UpdateInterval = returFeed.UpdateInterval;
         }
 
         private void buttonDeletePodcastFeed_Click(object sender, EventArgs e)
