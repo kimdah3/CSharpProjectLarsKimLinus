@@ -79,6 +79,12 @@
     <Compile Include="Views\AddPodcastFeedForm.Designer.cs">
       <DependentUpon>AddPodcastFeedForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ShowPodcastInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ShowPodcastInfoForm.Designer.cs">
+      <DependentUpon>ShowPodcastInfoForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\CategorySettingsForm.resx">
       <DependentUpon>CategorySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +109,9 @@
     </Compile>
     <EmbeddedResource Include="Views\AddPodcastFeedForm.resx">
       <DependentUpon>AddPodcastFeedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ShowPodcastInfoForm.resx">
+      <DependentUpon>ShowPodcastInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

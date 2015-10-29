@@ -23,7 +23,7 @@ namespace Data
         {
             this.Id = Feed.Id;
             this.Title = Feed.Title;
-            CollectionFeedItems = Feed.CollectionFeedItems.Select(x => new FeedItems(x.Id, x.Title, x.Mp3Url, x.PublishDate, x.IsUsed)).ToList();
+            CollectionFeedItems = Feed.CollectionFeedItems.Select(x => new FeedItems(x.Id, x.Title, x.Mp3Url, x.PublishDate, x.IsUsed, x.Description)).ToList();
             Url = Feed.Url.ToString();
             Category = new CategoryItem(Feed.Category.Id, Feed.Category.Name);
             this.UpdateInterval = Feed.UpdateInterval;
@@ -66,7 +66,9 @@ namespace Data
         public string Mp3Url { get; set; }
         public DateTime PublishDate { get; set; }
         public bool IsUsed { get; set; }
-        public FeedItems(Guid Id, string Title, Uri Mp3Url, DateTime PublishDate, bool IsUsed)
+        public string Description { get; set; }
+
+        public FeedItems(Guid Id, string Title, Uri Mp3Url, DateTime PublishDate, bool IsUsed, string Description)
         
         {
             this.Id = Id;
@@ -74,6 +76,7 @@ namespace Data
             this.Mp3Url = Mp3Url.ToString();
             this.PublishDate = PublishDate;
             this.IsUsed = IsUsed;
+            this.Description = Description;
         }
         public FeedItems()
         {

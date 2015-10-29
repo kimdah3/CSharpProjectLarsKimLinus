@@ -32,10 +32,10 @@ namespace Logic.Entities
 
         public override string ToString()
         {
-            return $"Title: {Title}";
+            return Title;
         }
 
-        public void addFeedItem(Guid ID, string title, Uri Mp3Url, DateTime PublishDate, bool IsUsed)
+        public void addFeedItem(Guid ID, string title, Uri Mp3Url, DateTime PublishDate, bool IsUsed, string Description)
         {
 
             var Item = new FeedItem
@@ -44,7 +44,8 @@ namespace Logic.Entities
                 Title = title,
                 Mp3Url = Mp3Url,
                 PublishDate = PublishDate,
-                IsUsed = IsUsed
+                IsUsed = IsUsed,
+                Description = Description
             };
 
             CollectionFeedItems.Add(Item);
