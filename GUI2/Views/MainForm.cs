@@ -5,6 +5,7 @@ using System.Timers;
 using System.Windows.Forms;
 using Data;
 using GUI.Views;
+using GUI2;
 using GUI2.Views;
 using Logic.Entities;
 using Logic.Readers;
@@ -45,7 +46,7 @@ namespace GUI
 
             //UpdateTimers();
 
-            
+
             //var timer = new Timer(6000);
             //timer.Start();
             //timer.Elapsed += TimerOnElapsed;
@@ -144,19 +145,28 @@ namespace GUI
 
         private void buttonPlayPodcastEpisode_Click(object sender, EventArgs e)
         {
-            var feedItem = (FeedItem)listBoxPodcastEpisodes.SelectedItem;
-            var feed = listBoxPodcastFeeds.SelectedItem as Feed;
-            foreach (var item in feed.CollectionFeedItems)
+            try
             {
-                if (item.Equals(feedItem))
+                if (!Validation.ControlSelectionCheck(listBoxPodcastEpisodes.SelectedIndex)) return;
+
+                var feedItem = (FeedItem)listBoxPodcastEpisodes.SelectedItem;
+                var feed = listBoxPodcastFeeds.SelectedItem as Feed;
+                foreach (var item in feed.CollectionFeedItems)
                 {
-                    item.IsUsed = true;
+                    if (item.Equals(feedItem))
+                    {
+                        item.IsUsed = true;
+                    }
+
                 }
 
+                Process.Start(feedItem.Mp3Url.AbsoluteUri);
+
             }
-
-            Process.Start(feedItem.Mp3Url.AbsoluteUri);
-
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonAddCategory_Click(object sender, EventArgs e)
@@ -175,7 +185,7 @@ namespace GUI
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
-        { 
+        {
             //Använder detta för att testa att serialisera. Körs när programmet stängs.
             Data.DataSerializer test = new Data.DataSerializer();
             test.SaveToFile(AllFeeds);
@@ -226,42 +236,68 @@ namespace GUI
 
         private void buttonDeletePodcastFeed_Click(object sender, EventArgs e)
         {
-            var targetFeed = listBoxPodcastFeeds.SelectedItem as Feed;
-            AllFeeds.Remove(targetFeed);
-            UpdateFeedList();
+            try
+            {
+                if (!Validation.ControlSelectionCheck(listBoxPodcastFeeds.SelectedIndex)) return;
+                var targetFeed = listBoxPodcastFeeds.SelectedItem as Feed;
+                AllFeeds.Remove(targetFeed);
+                UpdateFeedList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonEditPodcastFeed_Click(object sender, EventArgs e)
         {
-
-            if (listBoxPodcastFeeds.SelectedIndex == -1) return;
-            var targetFeed = listBoxPodcastFeeds.SelectedItem as Feed;
-            AllFeeds.Remove(targetFeed);
-
-            using (var editPodcastFeedForm = new EditPodcastFeedForm(targetFeed, Categories))
+            try
             {
-                editPodcastFeedForm.ShowDialog();
+                if (!Validation.ControlSelectionCheck(listBoxPodcastFeeds.SelectedIndex)) return;
 
-                if (editPodcastFeedForm.DialogResult == DialogResult.OK)
+                if (listBoxPodcastFeeds.SelectedIndex == -1) return;
+                var targetFeed = listBoxPodcastFeeds.SelectedItem as Feed;
+                AllFeeds.Remove(targetFeed);
+
+                using (var editPodcastFeedForm = new EditPodcastFeedForm(targetFeed, Categories))
                 {
-                    AllFeeds.Add(editPodcastFeedForm.EditedFeed);
+                    editPodcastFeedForm.ShowDialog();
+
+                    if (editPodcastFeedForm.DialogResult == DialogResult.OK)
+                    {
+                        AllFeeds.Add(editPodcastFeedForm.EditedFeed);
+                    }
+                    else
+                    {
+                        AllFeeds.Add(targetFeed);
+                    }
                 }
-                else
-                {
-                    AllFeeds.Add(targetFeed);
-                }
+                if (comboBoxFeedCategory.SelectedIndex != -1)
+                    UpdateFeedListByCategory(comboBoxFeedCategory.SelectedItem as Category);
             }
-            if (comboBoxFeedCategory.SelectedIndex != -1)
-                UpdateFeedListByCategory(comboBoxFeedCategory.SelectedItem as Category);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonShowMore_Click(object sender, EventArgs e)
         {
-            var selectedFeedItem = listBoxPodcastEpisodes.SelectedItem as FeedItem;
-
-            using (var showPodcastInfoForm = new ShowPodcastInfoForm(selectedFeedItem))
+            try
             {
-                showPodcastInfoForm.ShowDialog();
+                if (!Validation.ControlSelectionCheck(listBoxPodcastEpisodes.SelectedIndex)) return;
+
+                var selectedFeedItem = listBoxPodcastEpisodes.SelectedItem as FeedItem;
+
+                using (var showPodcastInfoForm = new ShowPodcastInfoForm(selectedFeedItem))
+                {
+                    showPodcastInfoForm.ShowDialog();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
         }

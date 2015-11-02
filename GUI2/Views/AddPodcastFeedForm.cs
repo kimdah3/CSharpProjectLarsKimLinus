@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using GUI2;
 using Logic.Entities;
 using Logic.Readers;
 
@@ -63,8 +64,10 @@ namespace GUI.Views
         private void textBoxURL_Leave(object sender, EventArgs e)
         {
             var rssReader = new RssReader();
+            
             try
             {
+                labelTitle.Text = "Title:";
                 NewFeed = rssReader.ReadFeed(new Uri(textBoxURL.Text));
                 textBoxTitle.Text = NewFeed.Title;
                 labelEpisodes.Text = "Episodes: " + NewFeed.CollectionFeedItems.Count;

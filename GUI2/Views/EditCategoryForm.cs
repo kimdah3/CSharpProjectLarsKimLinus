@@ -34,8 +34,17 @@ namespace GUI2.Views
 
         private void buttonChange_Click(object sender, EventArgs e)
         {
-            NewCategory.Name = textBoxNewName.Text;
-            DialogResult = DialogResult.OK;
+            try
+            {
+                if (!Validation.TextboxNotEmpty(textBoxNewName.Text)) return;
+                NewCategory.Name = textBoxNewName.Text;
+                DialogResult = DialogResult.OK;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

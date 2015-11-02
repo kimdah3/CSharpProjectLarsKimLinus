@@ -18,7 +18,7 @@ namespace GUI2
 
             else
             {
-                throw new Exception("Fält får inte lämnas tomma.");
+                throw new Exception("Text fields can't be left empty.");
             }
 
         }
@@ -63,15 +63,29 @@ namespace GUI2
 
         public static bool ComboboxCheck(string selectedItem)
         {
-            if(selectedItem != null)
+            if (selectedItem != null)
             {
                 return true;
             }
 
             else
             {
-                throw new Exception("Du måste applicera en kategori.");
+                throw new Exception("Nothing is selected.");
             }
         }
+
+        public static bool ControlSelectionCheck(int selection)
+        {
+            if (selection != -1)
+            {
+                return true;
+            }
+
+            else
+            {
+                throw new Exception("Nothing is selected.");
+            }
+        }
+
     }
 }

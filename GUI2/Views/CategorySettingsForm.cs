@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Data;
@@ -42,19 +39,28 @@ namespace GUI2.Views
             DialogResult = IsCategoriesChanged ? DialogResult.OK : DialogResult.Ignore;
         }
 
-        //Skall ändras till smidigare lösning med lambda och 
         private void buttonAddCategory_Click(object sender, EventArgs e)
         {
-            var newCategory = new Category(textBoxCategoryName.Text);
-
-            foreach (var category in Categories.Where(category => string.Compare(category.Name, newCategory.Name) == 0))
+            try
             {
-                newCategory = category;
-            }
+                if (!Validation.TextboxNotEmpty(textBoxCategoryName.Text)) return;
 
-            Categories.Add(newCategory);
-            UpdateCategoriesListBox();
-            IsCategoriesChanged = true;
+                var newCategory = new Category(textBoxCategoryName.Text);
+
+                foreach (var category in Categories.Where(category => string.Compare(category.Name, newCategory.Name) == 0))
+                {
+                    newCategory = category;
+                }
+
+                Categories.Add(newCategory);
+                UpdateCategoriesListBox();
+                IsCategoriesChanged = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void UpdateCategoriesListBox()
@@ -68,73 +74,89 @@ namespace GUI2.Views
 
         private void buttonDeleteCategory_Click(object sender, EventArgs e)
         {
-            if (listBoxCategories.SelectedIndex == -1) return;
-
-            var category = listBoxCategories.SelectedItem as Category;
-            var unspecifiedCategory = new Category("Unspecified");
-            Categories.Remove(category);
-
-            foreach (var feed in AllFeeds)
+            try
             {
-                var c = feed.Category as Category;
-                if (string.Compare(c.Name, category.Name) == 0)
-                    feed.Category = unspecifiedCategory;
+                if (!Validation.ControlSelectionCheck(listBoxCategories.SelectedIndex)) return;
+                if (listBoxCategories.SelectedIndex == -1) return;
+
+                var category = listBoxCategories.SelectedItem as Category;
+                var unspecifiedCategory = new Category("Unspecified");
+                Categories.Remove(category);
+
+                foreach (var feed in AllFeeds)
+                {
+                    var c = feed.Category as Category;
+                    if (string.Compare(c.Name, category.Name) == 0)
+                        feed.Category = unspecifiedCategory;
+                }
+
+
+                foreach (var c in Categories) // Ser till att en category inte ändras till samma namns som en befintlig.
+                    if (string.Compare(unspecifiedCategory.Name, c.Name) == 0)
+                        unspecifiedCategory = c;
+
+                Categories.Add(unspecifiedCategory);
+                UpdateCategoriesListBox();
+                IsCategoriesChanged = true;
             }
-
-
-            foreach (var c in Categories) // Ser till att en category inte ändras till samma namns som en befintlig.
-                if (string.Compare(unspecifiedCategory.Name, c.Name) == 0)
-                    unspecifiedCategory = c;
-
-            Categories.Add(unspecifiedCategory);
-            UpdateCategoriesListBox();
-            IsCategoriesChanged = true;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
         private void buttonEditCategory_Click(object sender, EventArgs e)
         {
-            if (listBoxCategories.SelectedIndex == -1) return;
-            var category = (Category) listBoxCategories.SelectedItem;
-
-            Categories.Remove(category);
-
-            foreach (var feed in AllFeeds)
+            try
             {
-                var c = feed.Category as Category;
-                if (string.Compare(c.Name,category.Name) == 0)
-                    feed.Category = null;
-            }
+                if (!Validation.ControlSelectionCheck(listBoxCategories.SelectedIndex)) return;
+                if (listBoxCategories.SelectedIndex == -1) return;
+                var category = (Category)listBoxCategories.SelectedItem;
 
-            using (var editCategoryForm = new EditCategoryForm(category))
-            {
-                editCategoryForm.ShowDialog();
+                Categories.Remove(category);
 
-                if (editCategoryForm.DialogResult == DialogResult.OK)
+                foreach (var feed in AllFeeds)
                 {
-                    category = editCategoryForm.NewCategory;
-
-                    foreach (var c in Categories) // Ser till att en category inte ändras till samma namns som en befintlig.
-                        if (string.Compare(category.Name, c.Name)==0)
-                            category = c;
-                    Categories.Add(category);
+                    var c = feed.Category as Category;
+                    if (string.Compare(c.Name, category.Name) == 0)
+                        feed.Category = null;
                 }
-                else
+
+                using (var editCategoryForm = new EditCategoryForm(category))
                 {
-                    Categories.Add(category);
+                    editCategoryForm.ShowDialog();
+
+                    if (editCategoryForm.DialogResult == DialogResult.OK)
+                    {
+                        category = editCategoryForm.NewCategory;
+
+                        foreach (var c in Categories) // Ser till att en category inte ändras till samma namns som en befintlig.
+                            if (string.Compare(category.Name, c.Name) == 0)
+                                category = c;
+                        Categories.Add(category);
+                    }
+                    else
+                    {
+                        Categories.Add(category);
+                    }
                 }
-            }
 
-            foreach (var feed in AllFeeds)
+                foreach (var feed in AllFeeds)
+                {
+                    var c = feed.Category as Category;
+                    if (c == null)
+                        feed.Category = category;
+                }
+
+
+                UpdateCategoriesListBox();
+                IsCategoriesChanged = true;
+            }
+            catch (Exception ex)
             {
-                var c = feed.Category as Category;
-                if (c == null)
-                    feed.Category = category;
+                MessageBox.Show(ex.Message);
             }
-
-
-            UpdateCategoriesListBox();
-            IsCategoriesChanged = true;
         }
     }
 }
