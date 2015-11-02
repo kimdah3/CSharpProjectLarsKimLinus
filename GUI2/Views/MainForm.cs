@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Timers;
+using System.Web.WebSockets;
 using System.Windows.Forms;
 using Data;
 using GUI.Views;
@@ -17,9 +19,7 @@ namespace GUI
     {
         public List<Uri> AllUris { get; set; }
         public List<Data.IFeed> AllFeeds { get; set; }
-        public List<Timer> Timers { get; set; }
-        public HashSet<Category> Categories { get; set; }
-
+        public List<Category> Categories { get; set; }
 
         public MainForm()
         {
@@ -30,7 +30,7 @@ namespace GUI
         {
 
             AllFeeds = new List<Data.IFeed>();
-            Categories = new HashSet<Category> { new Category("All"), new Category("Unspecified") };
+            Categories = new List<Category> { new Category("All"), new Category("Unspecified") };
 
             var Serializer = new Data.DataSerializer();
             Serializer.LoadFromFile(LoadFeed);
@@ -38,70 +38,42 @@ namespace GUI
             foreach (var feed in AllFeeds)
             {
                 listBoxPodcastFeeds.Items.Add(feed);
-                if (string.Compare(feed.Category.Name, "Unspecified") != 0)
-                    Categories.Add((Category)feed.Category);
-            }
+                //foreach (var category in Categories)
+                //{
+                //    if(string.Compare(feed.Category.Name, category.Name) != 0)
+                //        Categories.Add((Category)feed.Category); 
+                //}
 
+                /*if (string.Compare(feed.Category.Name, "Unspecified") != 0)
+                    Categories.Add((Category)feed.Category);*/
+
+                /*******************************************************************************/
+                /*************************** Update interval (hours) ***************************/
+                /************************************************||*****************************/
+                /************************************************\/******************************/
+                var timer = new Timer(feed.UpdateInterval * 10000*60*60);
+                timer.Start();
+                timer.Elapsed += (o, args) => TimerOnElapsed(o, args, feed as Feed);
+            }
             UpdateCategoryComboBox();
-
-            //UpdateTimers();
-
-
-            //var timer = new Timer(6000);
-            //timer.Start();
-            //timer.Elapsed += TimerOnElapsed;
         }
 
-        /*  private void UpdateTimers()
-          {
-             //foreach (var timer in Timers)
-             //{
-             //    timer.Stop();
-             //    timer.Close();
-             //}
-
-           Timers = new List<Timer>();
-             foreach (var feed in AllFeeds)
-             {
-                 var s = "HEJ";
-                 var timer = new Timer(feed.UpdateInterval*1000);
-                 timer.Start();
-                 timer.Elapsed += delegate(object sender, ElapsedEventArgs args)
-                 {
-                     var rssReader = new RssReader();
-                     var newFeedItems = rssReader.ReadIFeedItems(feed.Url);
-                     MessageBox.Show(newFeedItems.Count + " : " + feed.CollectionFeedItems.Count);
-
-                 };
-                 Timers.Add(timer);
-             }
-         }*/
-
-        private void TimerOnElapsed(object sender, ElapsedEventArgs elapsedEventArgs, IFeed feed)
+        private void TimerOnElapsed(object sender, ElapsedEventArgs elapsedEventArgs, Feed feed)
         {
+            var rssReader = new RssReader();
+            var newFeedItems = rssReader.ReadFeedItems(feed.Url);
 
-            /*
-            if (newFeedItems.Count > feed.CollectionFeedItems.Count)
+            foreach (var f in AllFeeds)
             {
-                MessageBox.Show(newFeedItems.Count - AllFeeds[0].CollectionFeedItems.Count + " new episodes from " + AllFeeds[0].Title);
-                feed.CollectionFeedItems = newFeedItems; //???????//??/?/?/?//??/?/?/?/?/?/
-
+                if (feed.Equals(f))
+                {
+                    var i = newFeedItems.Count - f.CollectionFeedItems.Count;
+                    f.CollectionFeedItems = new List<IFeedItem>(newFeedItems);
+                    MessageBox.Show(i + " new episodes for " + f.Title);
+                }
             }
-            */
-        }
 
-        //private void TimerOnElapsed(object sender, ElapsedEventArgs elapsedEventArgs)
-        //{
-        //    var rssReader = new RssReader();
-        //    var newFeedItems = rssReader.ReadIFeedItems(new Uri(@"C:\\temp\rss2"));
-        //    if (newFeedItems.Count > AllFeeds[0].CollectionFeedItems.Count)
-        //    {
-        //        MessageBox.Show(newFeedItems.Count - AllFeeds[0].CollectionFeedItems.Count + " new episodes from " + AllFeeds[0].Title);
-        //        AllFeeds[0].CollectionFeedItems = newFeedItems;
-        //    }
-        //    else
-        //        MessageBox.Show("No new episodes");
-        //}
+        }
 
         private void listBoxPodcastFeeds_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -119,20 +91,32 @@ namespace GUI
             using (var addPodcastFeedForm = new AddPodcastFeedForm(Categories))
             {
                 addPodcastFeedForm.ShowDialog();
-                if (addPodcastFeedForm.DialogResult == DialogResult.OK)
-                {
-                    AllFeeds.Add(addPodcastFeedForm.NewFeed);
-                    UpdateFeedList();
-                }
+                if (addPodcastFeedForm.DialogResult != DialogResult.OK) return;
+                AllFeeds.Add(addPodcastFeedForm.NewFeed);
+                UpdateFeedList();
             }
         }
 
         private void UpdateCategoryComboBox()
         {
             comboBoxFeedCategory.Items.Clear();
+
+
+            foreach (var feed in AllFeeds)
+            {
+                Categories.Add(feed.Category as Category);
+            }
+
+            var distinctItems = Categories.Distinct(new DistinctCategoryComparer());
+            Categories = new List<Category>();
+            foreach (var item in distinctItems)
+            {
+                Categories.Add(item);
+            }
+
+
             foreach (var category in Categories)
                 comboBoxFeedCategory.Items.Add(category);
-
         }
 
         private void UpdateFeedList()
@@ -151,13 +135,9 @@ namespace GUI
 
                 var feedItem = (FeedItem)listBoxPodcastEpisodes.SelectedItem;
                 var feed = listBoxPodcastFeeds.SelectedItem as Feed;
-                foreach (var item in feed.CollectionFeedItems)
+                foreach (var item in feed.CollectionFeedItems.Where(item => item.Equals(feedItem)))
                 {
-                    if (item.Equals(feedItem))
-                    {
-                        item.IsUsed = true;
-                    }
-
+                    item.IsUsed = true;
                 }
 
                 Process.Start(feedItem.Mp3Url.AbsoluteUri);
@@ -175,18 +155,15 @@ namespace GUI
             {
                 categorySettingsForm.ShowDialog();
 
-                if (categorySettingsForm.DialogResult == DialogResult.OK)
-                {
-                    this.Categories = categorySettingsForm.Categories;
-                    UpdateCategoryComboBox();
-                }
-
+                if (categorySettingsForm.DialogResult != DialogResult.OK) return;
+                this.Categories = categorySettingsForm.Categories;
+                UpdateCategoryComboBox();
             }
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //Använder detta för att testa att serialisera. Körs när programmet stängs.
+            //Använder detta för att serialisera. Körs när programmet stängs.
             Data.DataSerializer test = new Data.DataSerializer();
             test.SaveToFile(AllFeeds);
         }

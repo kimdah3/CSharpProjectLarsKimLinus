@@ -124,9 +124,9 @@
             this.labelUpdateInterval.AutoSize = true;
             this.labelUpdateInterval.Location = new System.Drawing.Point(12, 88);
             this.labelUpdateInterval.Name = "labelUpdateInterval";
-            this.labelUpdateInterval.Size = new System.Drawing.Size(128, 13);
+            this.labelUpdateInterval.Size = new System.Drawing.Size(120, 13);
             this.labelUpdateInterval.TabIndex = 4;
-            this.labelUpdateInterval.Text = "Update Interval: (minutes)";
+            this.labelUpdateInterval.Text = "Update Interval: (Hours)";
             // 
             // textBoxUpdateInterval
             // 

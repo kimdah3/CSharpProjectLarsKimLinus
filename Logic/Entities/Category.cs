@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Logic.Entities
 {
@@ -18,5 +19,18 @@ namespace Logic.Entities
             return Name;
         }
 
+    }
+
+    public class DistinctCategoryComparer : IEqualityComparer<Category>
+    {
+        public bool Equals(Category x, Category y)
+        {
+            return x.Name == y.Name;
+        }
+
+        public int GetHashCode(Category obj)
+        {
+            return obj.Name.GetHashCode();
+        }
     }
 }

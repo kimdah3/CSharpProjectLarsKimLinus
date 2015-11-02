@@ -10,7 +10,7 @@ namespace GUI2.Views
 {
     public partial class CategorySettingsForm : Form
     {
-        public HashSet<Category> Categories { get; set; }
+        public List<Category> Categories { get; set; }
         public List<IFeed> AllFeeds { get; set; }
 
         public bool IsCategoriesChanged { get; set; }
@@ -20,7 +20,7 @@ namespace GUI2.Views
             InitializeComponent();
         }
 
-        public CategorySettingsForm(HashSet<Category> categories, List<IFeed> allFeeds)
+        public CategorySettingsForm(List<Category> categories, List<IFeed> allFeeds)
         {
             InitializeComponent();
             this.Categories = categories;

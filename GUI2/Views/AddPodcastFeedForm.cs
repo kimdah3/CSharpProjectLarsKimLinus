@@ -10,14 +10,14 @@ namespace GUI.Views
     public partial class AddPodcastFeedForm : Form
     {
         public Feed NewFeed { get; set; }
-        private HashSet<Category> _categories;
+        private List<Category> _categories;
 
         public AddPodcastFeedForm()
         {
             InitializeComponent();
         }
 
-        public AddPodcastFeedForm(HashSet<Category> categories)
+        public AddPodcastFeedForm(List<Category> categories)
         {
             InitializeComponent();
             _categories = categories;

@@ -16,13 +16,13 @@ namespace GUI2.Views
     {
         public Feed OriginalFeed { get; set; }
         public Feed EditedFeed { get; set; }
-        public HashSet<Category> Categories { get; set; }
+        public List<Category> Categories { get; set; }
         public EditPodcastFeedForm()
         {
             InitializeComponent();
         }
 
-        public EditPodcastFeedForm(Feed originalFeed, HashSet<Category> categories)
+        public EditPodcastFeedForm(Feed originalFeed, List<Category> categories)
         {
             InitializeComponent();
             OriginalFeed = originalFeed;

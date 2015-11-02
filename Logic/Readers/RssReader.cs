@@ -26,10 +26,7 @@ namespace Logic.Readers
             {
                 var feedItem = new FeedItem();
                 var id = Guid.NewGuid();
-                if (Guid.TryParse(item.Id, out id))
-                    feedItem.Id = new Guid(item.Id); // Inte alla feeds har korrekt ID därför krävs validering.
-                else
-                    feedItem.Id = id;
+                feedItem.Id = Guid.TryParse(item.Id, out id) ? new Guid(item.Id) : id;
                 feedItem.Title = item.Title.Text;
                 feedItem.Mp3Url = item.Links[0].Uri;
                 feedItem.PublishDate = item.PublishDate.DateTime;
@@ -56,10 +53,7 @@ namespace Logic.Readers
             {
                 var feedItem = new FeedItem();
                 var id = Guid.NewGuid();
-                if (Guid.TryParse(item.Id, out id))
-                    feedItem.Id = new Guid(item.Id); // Inte alla feeds har korrekt ID därför krävs validering.
-                else
-                    feedItem.Id = id;
+                feedItem.Id = Guid.TryParse(item.Id, out id) ? new Guid(item.Id) : id;
                 feedItem.Title = item.Title.Text;
                 feedItem.Mp3Url = item.Links[0].Uri;
                 feedItem.PublishDate = item.PublishDate.DateTime;
@@ -99,17 +93,6 @@ namespace Logic.Readers
                 feedItem.IsUsed = false;
                 feedItems.Add(feedItem);
             }
-
-
-
-            //// Hämtar category som finns innästlat i ett attribut.
-            //foreach (var elementExtension in syndicationFeed.ElementExtensions)
-            //{
-            //    if (elementExtension.OuterName.Equals("category"))
-            //    {
-            //        category = new Category(elementExtension.GetObject<XElement>().FirstAttribute.Value);
-            //    }
-            //}
 
             var items = new List<Data.IFeedItem>();
             feedItems.ForEach(x => items.Add(x));
