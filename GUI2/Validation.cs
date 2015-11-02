@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace GUI2
 {
-    public class Validation
+    internal class Validation
     {
         public static bool TextboxNotEmpty(string text)
         {
@@ -42,7 +42,7 @@ namespace GUI2
 
             else
             {
-                throw new Exception("Du måste ange en URL.");
+                throw new Exception("You must type an URL.");
             }
               
         }
@@ -53,7 +53,7 @@ namespace GUI2
 
             if (!int.TryParse(TimeInterval, out parseValue))
             {
-                throw new Exception("Update Interval måste anges i siffror.");
+                throw new Exception("Update Interval must be assign with numbers.");
             }
             else
             {
