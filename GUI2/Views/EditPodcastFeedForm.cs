@@ -76,22 +76,37 @@ namespace GUI2.Views
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            EditedFeed.Title = textBoxTitle.Text;
-            EditedFeed.Url = new Uri(textBoxURL.Text);
-            EditedFeed.UpdateInterval = Convert.ToInt32(textBoxUpdateInterval.Text);
-
-            if (comboBoxCategories.SelectedIndex > -1)
+            try
             {
-                EditedFeed.Category = comboBoxCategories.SelectedItem as Category;
+                Validation.TextboxNotEmpty(textBoxTitle.Text);
+                Validation.NumberCheck(textBoxUpdateInterval.Text);
+                Validation.UrlCheck(textBoxURL.Text);
+                Validation.ComboboxCheck(comboBoxCategories.SelectedItem.ToString());
+                EditedFeed.Title = textBoxTitle.Text;
+                EditedFeed.Url = new Uri(textBoxURL.Text);
+                EditedFeed.UpdateInterval = Convert.ToInt32(textBoxUpdateInterval.Text);
+                if (comboBoxCategories.SelectedIndex > -1)
+                {
+                    EditedFeed.Category = comboBoxCategories.SelectedItem as Category;
+                }
+                else
+                {
+                    MessageBox.Show("Must select a category");
+                    return;
+                }
+
+
+                DialogResult = DialogResult.OK;
             }
-            else
+
+            catch (Exception ex)
             {
-                MessageBox.Show("Must select a category");
-                return;
+                MessageBox.Show(ex.Message);
             }
 
+            
 
-            DialogResult = DialogResult.OK;
+
         }
     }
 }

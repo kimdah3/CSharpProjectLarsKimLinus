@@ -43,7 +43,7 @@ namespace GUI
 
             UpdateCategoryComboBox();
 
-            UpdateTimers();
+            //UpdateTimers();
 
             
             //var timer = new Timer(6000);
@@ -51,30 +51,30 @@ namespace GUI
             //timer.Elapsed += TimerOnElapsed;
         }
 
-        private void UpdateTimers()
-        {
-            //foreach (var timer in Timers)
-            //{
-            //    timer.Stop();
-            //    timer.Close();
-            //}
+        /*  private void UpdateTimers()
+          {
+             //foreach (var timer in Timers)
+             //{
+             //    timer.Stop();
+             //    timer.Close();
+             //}
 
-            Timers = new List<Timer>();
-            foreach (var feed in AllFeeds)
-            {
-                var s = "HEJ";
-                var timer = new Timer(feed.UpdateInterval*1000);
-                timer.Start();
-                timer.Elapsed += delegate(object sender, ElapsedEventArgs args)
-                {
-                    var rssReader = new RssReader();
-                    var newFeedItems = rssReader.ReadIFeedItems(feed.Url);
-                    MessageBox.Show(newFeedItems.Count + " : " + feed.CollectionFeedItems.Count);
+           Timers = new List<Timer>();
+             foreach (var feed in AllFeeds)
+             {
+                 var s = "HEJ";
+                 var timer = new Timer(feed.UpdateInterval*1000);
+                 timer.Start();
+                 timer.Elapsed += delegate(object sender, ElapsedEventArgs args)
+                 {
+                     var rssReader = new RssReader();
+                     var newFeedItems = rssReader.ReadIFeedItems(feed.Url);
+                     MessageBox.Show(newFeedItems.Count + " : " + feed.CollectionFeedItems.Count);
 
-                };
-                Timers.Add(timer);
-            }
-        }
+                 };
+                 Timers.Add(timer);
+             }
+         }*/
 
         private void TimerOnElapsed(object sender, ElapsedEventArgs elapsedEventArgs, IFeed feed)
         {

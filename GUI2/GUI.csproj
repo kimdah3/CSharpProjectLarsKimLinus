@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Validation.cs" />
     <Compile Include="Views\CategorySettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
