@@ -38,14 +38,6 @@ namespace GUI
             foreach (var feed in AllFeeds)
             {
                 listBoxPodcastFeeds.Items.Add(feed);
-                //foreach (var category in Categories)
-                //{
-                //    if(string.Compare(feed.Category.Name, category.Name) != 0)
-                //        Categories.Add((Category)feed.Category); 
-                //}
-
-                /*if (string.Compare(feed.Category.Name, "Unspecified") != 0)
-                    Categories.Add((Category)feed.Category);*/
 
                 /*******************************************************************************/
                 /*************************** Update interval (hours) ***************************/
